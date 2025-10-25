@@ -11,20 +11,20 @@ export function AboutSection({ isActive }: AboutSectionProps) {
         isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 max-w-6xl h-full flex items-center">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
-          <div className="space-y-4 md:space-y-6">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-6xl h-full flex items-center py-4 sm:py-6 md:py-8">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center w-full">
+          <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
             <div className="inline-block">
               <span className="text-xs sm:text-sm font-semibold text-blue-400 bg-blue-950/50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-blue-800">
                 Sobre GluePets
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-balance leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-balance leading-tight">
               Nutrición inteligente para tus mejores amigos
             </h2>
 
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-2.5 sm:space-y-3 md:space-y-4">
               <div className="flex gap-3 items-start">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                   <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />

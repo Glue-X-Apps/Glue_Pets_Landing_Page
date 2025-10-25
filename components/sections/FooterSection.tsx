@@ -9,18 +9,18 @@ export function FooterSection({ isActive }: FooterSectionProps) {
         isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
       }`}
     >
-      <div className="container mx-auto px-6 text-center max-w-2xl">
-        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full flex items-center justify-center shadow-xl mx-auto mb-6">
-          <svg viewBox="0 0 100 100" className="w-12 h-12">
+      <div className="container mx-auto px-4 sm:px-6 text-center max-w-xs sm:max-w-sm md:max-w-2xl py-4 sm:py-6">
+        <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full flex items-center justify-center shadow-xl mx-auto mb-3 sm:mb-4 md:mb-6">
+          <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-10 sm:h-10 md:w-12">
             <path d="M50,20 Q30,40 30,60 Q30,80 50,90 Q70,80 70,60 Q70,40 50,20 Z" fill="white" />
             <ellipse cx="45" cy="55" rx="3" ry="4" fill="#3b82f6" />
             <ellipse cx="55" cy="55" rx="3" ry="4" fill="#3b82f6" />
           </svg>
         </div>
 
-        <h3 className="text-2xl font-bold mb-8">GluePets</h3>
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 md:mb-8">GluePets</h3>
 
-        <div className="flex justify-center gap-6 mb-8">
+        <div className="flex justify-center gap-4 sm:gap-6 mb-3 sm:mb-4 md:mb-8">
           <a
             href="#"
             className="w-12 h-12 bg-slate-800 hover:bg-slate-700 rounded-full flex items-center justify-center transition-colors"
@@ -39,9 +39,9 @@ export function FooterSection({ isActive }: FooterSectionProps) {
           </a>
         </div>
 
-        <div className="border-t border-slate-800 pt-6">
-          <p className="text-slate-400 mb-2">© 2025 GluePets</p>
-          <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
+        <div className="border-t border-slate-800 pt-3 sm:pt-4 md:pt-6">
+          <p className="text-slate-400 text-sm sm:text-base mb-1 sm:mb-2">© 2025 GluePets</p>
+          <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors text-xs sm:text-sm">
             Política de privacidad
           </a>
         </div>

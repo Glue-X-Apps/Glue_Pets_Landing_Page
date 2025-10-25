@@ -12,21 +12,21 @@ export function FeaturesSection({ isActive }: FeaturesSectionProps) {
         isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 max-w-6xl h-full flex items-center py-12 sm:py-16">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-6xl h-full flex items-center py-4 sm:py-6 md:py-8 lg:py-12">
         <div className="w-full">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12">
             <span className="text-xs sm:text-sm font-semibold text-cyan-400 bg-cyan-950/50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-cyan-800 inline-block mb-4">
               Características
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 text-balance">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4 text-balance">
               Todo lo que necesitas en un solo lugar
             </h2>
-            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto text-balance">
+            <p className="text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto text-balance px-2 sm:px-0">
               Herramientas profesionales para el cuidado nutricional de tu mascota
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto">
             <Card className="group p-5 sm:p-6 bg-gradient-to-br from-slate-800/90 to-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:-translate-y-1">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
