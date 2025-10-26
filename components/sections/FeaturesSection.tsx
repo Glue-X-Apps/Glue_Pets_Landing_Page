@@ -8,7 +8,7 @@ interface FeaturesSectionProps {
 export function FeaturesSection({ isActive }: FeaturesSectionProps) {
   return (
     <section
-      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 transition-all duration-700 ${
+      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 transition-all duration-700 landscape:max-h-[500px]:overflow-y-auto landscape:max-h-[500px]:justify-start landscape:max-h-[500px]:pt-3 landscape:max-h-[500px]:pb-4 group-data-[mlh=true]:overflow-y-auto group-data-[mlh=true]:justify-start group-data-[mlh=true]:pt-3 group-data-[mlh=true]:pb-4 ${
         isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
       }`}
     >
