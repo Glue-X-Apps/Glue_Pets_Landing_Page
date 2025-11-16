@@ -41,9 +41,15 @@ export function FooterSection({ isActive }: FooterSectionProps) {
 
         <div className="border-t border-slate-800 pt-3 sm:pt-4 md:pt-6 landscape:max-h-[500px]:pt-1 landscape:max-h-[500px]:sm:pt-2 landscape:max-h-[500px]:md:pt-3">
           <p className="text-slate-400 text-sm sm:text-base mb-1 sm:mb-2 landscape:max-h-[500px]:text-xs landscape:max-h-[500px]:sm:text-sm landscape:max-h-[500px]:mb-0.5">© 2025 GluePets</p>
-          <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors text-xs sm:text-sm landscape:max-h-[500px]:text-[10px] landscape:max-h-[500px]:sm:text-xs">
-            Política de privacidad
-          </a>
+          <div className="flex items-center justify-center gap-3">
+            <a href="/privacy" className="text-blue-400 hover:text-blue-300 transition-colors text-xs sm:text-sm landscape:max-h-[500px]:text-[10px] landscape:max-h-[500px]:sm:text-xs">
+              Política de privacidad
+            </a>
+            <span className="text-slate-600">•</span>
+            <a href="/terms" className="text-blue-400 hover:text-blue-300 transition-colors text-xs sm:text-sm landscape:max-h-[500px]:text-[10px] landscape:max-h-[500px]:sm:text-xs">
+              Términos y condiciones
+            </a>
+          </div>
         </div>
       </div>
     </section>
