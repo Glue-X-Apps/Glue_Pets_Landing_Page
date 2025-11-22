@@ -49,6 +49,7 @@ export function FooterSection({ isActive }: FooterSectionProps) {
             <a href="/terms" className="text-blue-400 hover:text-blue-300 transition-colors text-xs sm:text-sm landscape:max-h-[500px]:text-[10px] landscape:max-h-[500px]:sm:text-xs">
               Términos y condiciones
             </a>
+            
             <span className="text-slate-600">•</span>
             <a href="/subprocessors" className="text-blue-400 hover:text-blue-300 transition-colors text-xs sm:text-sm landscape:max-h-[500px]:text-[10px] landscape:max-h-[500px]:sm:text-xs">
               Subprocesadores
