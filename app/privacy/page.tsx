@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="prose prose-invert max-w-none">
           <h2>1. Quiénes somos</h2>
-          <p>GluePets es un <strong>proyecto personal en fase MVP</strong> orientado al cuidado nutricional de mascotas, desarrollado por un <strong>desarrollador independiente</strong> (en adelante, “GluePets”, “nosotros”). Este documento está pensado para facilitar la lectura y comprensión del tratamiento de datos durante pruebas y validación del producto. Para consultas de privacidad, usa el correo de contacto indicado en la app o envía un email a <em>tu_correo_contacto@ejemplo.com</em> (actualiza este dato antes de publicar).</p>
+          <p>GluePets es un <strong>proyecto personal en fase MVP</strong> orientado al cuidado nutricional de mascotas, desarrollado por un <strong>desarrollador independiente</strong> (en adelante, "GluePets", "nosotros"). Este documento está pensado para facilitar la lectura y comprensión del tratamiento de datos durante pruebas y validación del producto. Para consultas de privacidad, usa el correo de contacto indicado en la app o envía un email a <em>contact.gluepets.app@gmail.com</em> (actualiza este dato antes de publicar).</p>
 
           <h2>2. Ámbito de esta política</h2>
           <p>Esta política describe cómo recopilamos, usamos, compartimos y protegemos datos personales cuando usas la app móvil GluePets, la landing page y nuestras APIs/servicios backend. Si no aceptas esta política, no uses los servicios. Al tratarse de un MVP, algunas funcionalidades pueden cambiar con rapidez; cualquier cambio relevante será reflejado en versiones futuras de esta política.</p>
@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
           <p>Aplicamos medidas técnicas y organizativas razonables para proteger tus datos (p.ej., cifrado en tránsito, control de acceso, monitorización). Ningún sistema es 100% seguro; te recomendamos buenas prácticas (contraseñas robustas, mantener tu dispositivo actualizado). Dado el carácter <strong>MVP/Beta</strong> del servicio, podrían existir errores o pérdidas de datos; evita almacenar información crítica y conserva copias de respaldo.</p>
 
           <h2>9. Tus derechos</h2>
-          <p>Según tu jurisdicción, puedes ejercer derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición. Para solicitarlo, escribe al correo de contacto indicado en la app o en el sitio (<em>contact@gluepets.click</em>). También puedes retirar consentimientos otorgados (p. ej., analítica o notificaciones) desde los ajustes.</p>
+          <p>Según tu jurisdicción, puedes ejercer derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición. Para solicitarlo, escribe al correo de contacto indicado en la app o en el sitio (<em>contact.gluepets.app@gmail.com</em>). También puedes retirar consentimientos otorgados (p. ej., analítica o notificaciones) desde los ajustes.</p>
 
           <h2>10. Menores</h2>
           <p>GluePets está dirigida a adultos responsables del cuidado de mascotas. No recabamos conscientemente datos personales de menores de 13 años (o la edad mínima aplicable en tu país). Si crees que un menor nos proporcionó datos, contáctanos para eliminarlos.</p>
@@ -70,7 +70,7 @@ export default function PrivacyPolicyPage() {
           <p>Podemos actualizar esta política para reflejar cambios operativos o legales. Publicaremos la versión vigente y la fecha de “Última actualización”. Cambios sustanciales podrán notificarse adicionalmente en la app o por email.</p>
 
           <h2>13. Contacto</h2>
-          <p>Para preguntas o solicitudes sobre privacidad, usa el correo de contacto indicado en la app o sitio (<em>contact@gluepets.click</em>). Sustituye este correo por el tuyo antes de publicar.</p>
+          <p>Para preguntas o solicitudes sobre privacidad, usa el correo de contacto indicado en la app o sitio (<em>contact.gluepets.app@gmail.com</em>). Sustituye este correo por el tuyo antes de publicar.</p>
         </div>
       </section>
     </main>

@@ -44,7 +44,7 @@ export default function AccountDeletionPage() {
               <ol className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
-                  <span>Envía un correo electrónico a: <a href="mailto:support@gluepets.click" className="font-semibold text-orange-600 hover:text-orange-700 underline">support@gluepets.click</a></span>
+                  <span>Envía un correo electrónico a: <a href="mailto:contact.gluepets.app@gmail.com" className="font-semibold text-orange-600 hover:text-orange-700 underline">contact.gluepets.app@gmail.com</a></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
@@ -216,13 +216,13 @@ export default function AccountDeletionPage() {
               Si necesitas ayuda o tienes preguntas sobre la eliminación de tu cuenta, contáctanos:
             </p>
             <a 
-              href="mailto:support@gluepets.click" 
+              href="mailto:contact.gluepets.app@gmail.com" 
               className="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              support@gluepets.click
+              contact.gluepets.app@gmail.com
             </a>
           </div>
         </div>

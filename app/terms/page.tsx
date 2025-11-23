@@ -66,7 +66,7 @@ export default function TermsPage() {
           <p>Podemos actualizar estos Términos para reflejar cambios en el servicio o la ley. Publicaremos la versión vigente y la fecha de “Última actualización”. Cambios sustanciales podrán notificarse adicionalmente.</p>
 
           <h2>15. Contacto</h2>
-          <p>Soporte y consultas: usa el correo indicado en la app o en el sitio (<em>contact@gluepets.click</em>). Sustituye este correo por el tuyo antes de publicar.</p>
+          <p>Soporte y consultas: usa el correo indicado en la app o en el sitio (<em>contact.gluepets.app@gmail.com</em>). Sustituye este correo por el tuyo antes de publicar.</p>
         </div>
       </section>
     </main>
