@@ -1,21 +1,25 @@
+import Image from "next/image";
+
 interface FooterSectionProps {
   isActive: boolean;
+  isMobile?: boolean;
 }
 
-export function FooterSection({ isActive }: FooterSectionProps) {
+export function FooterSection({ isActive, isMobile }: FooterSectionProps) {
   return (
     <section
-      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-slate-950 text-white transition-all duration-700 landscape:max-h-[500px]:overflow-y-auto landscape:max-h-[500px]:justify-start landscape:max-h-[500px]:pt-3 landscape:max-h-[500px]:pb-4 group-data-[mlh=true]:overflow-y-auto group-data-[mlh=true]:justify-start group-data-[mlh=true]:pt-3 group-data-[mlh=true]:pb-4 ${
-        isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-      }`}
+      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-slate-950 text-white transition-all duration-700 ${isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 text-center max-w-xs sm:max-w-sm md:max-w-2xl py-4 sm:py-6 landscape:max-h-[500px]:py-2 landscape:max-h-[500px]:max-w-xs">
         <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full flex items-center justify-center shadow-xl mx-auto mb-3 sm:mb-4 md:mb-6 landscape:max-h-[500px]:w-10 landscape:max-h-[500px]:h-10 landscape:max-h-[500px]:sm:w-12 landscape:max-h-[500px]:sm:h-12 landscape:max-h-[500px]:md:w-14 landscape:max-h-[500px]:md:h-14 landscape:max-h-[500px]:mb-1 landscape:max-h-[500px]:sm:mb-2 landscape:max-h-[500px]:md:mb-3">
-          <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 landscape:max-h-[500px]:w-6 landscape:max-h-[500px]:h-6 landscape:max-h-[500px]:sm:w-8 landscape:max-h-[500px]:md:w-10">
-            <path d="M50,20 Q30,40 30,60 Q30,80 50,90 Q70,80 70,60 Q70,40 50,20 Z" fill="white" />
-            <ellipse cx="45" cy="55" rx="3" ry="4" fill="#3b82f6" />
-            <ellipse cx="55" cy="55" rx="3" ry="4" fill="#3b82f6" />
-          </svg>
+          <Image
+            src="/img/GluePetsLogo.png"
+            alt="GluePets Logo"
+            width={100}
+            height={100}
+            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 object-contain"
+          />
         </div>
 
         <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 md:mb-8 landscape:max-h-[500px]:text-sm landscape:max-h-[500px]:sm:text-base landscape:max-h-[500px]:md:text-lg landscape:max-h-[500px]:mb-1 landscape:max-h-[500px]:sm:mb-2 landscape:max-h-[500px]:md:mb-3">GluePets</h3>
@@ -49,7 +53,7 @@ export function FooterSection({ isActive }: FooterSectionProps) {
             <a href="/terms" className="text-blue-400 hover:text-blue-300 transition-colors text-xs sm:text-sm landscape:max-h-[500px]:text-[10px] landscape:max-h-[500px]:sm:text-xs">
               Términos y condiciones
             </a>
-            
+
             <span className="text-slate-600">•</span>
             <a href="/subprocessors" className="text-blue-400 hover:text-blue-300 transition-colors text-xs sm:text-sm landscape:max-h-[500px]:text-[10px] landscape:max-h-[500px]:sm:text-xs">
               Subprocesadores

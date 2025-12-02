@@ -2,14 +2,14 @@ import { Sparkles } from "lucide-react";
 
 interface PremiumSectionProps {
   isActive: boolean;
+  isMobile?: boolean;
 }
 
-export function PremiumSection({ isActive }: PremiumSectionProps) {
+export function PremiumSection({ isActive, isMobile }: PremiumSectionProps) {
   return (
     <section
-      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 text-white transition-all duration-700 landscape:max-h-[500px]:overflow-y-auto landscape:max-h-[500px]:justify-start landscape:max-h-[500px]:pt-3 landscape:max-h-[500px]:pb-4 group-data-[mlh=true]:overflow-y-auto group-data-[mlh=true]:justify-start group-data-[mlh=true]:pt-3 group-data-[mlh=true]:pb-4 ${
-        isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-      }`}
+      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 text-white transition-all duration-700 ${isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 max-w-3xl text-center py-4 sm:py-6 landscape:max-h-[500px]:py-2">
         <Sparkles className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-4 sm:mb-5 md:mb-6 text-cyan-200 landscape:max-h-[500px]:w-8 landscape:max-h-[500px]:h-8 landscape:max-h-[500px]:sm:w-10 landscape:max-h-[500px]:sm:h-10 landscape:max-h-[500px]:md:w-12 landscape:max-h-[500px]:md:h-12 landscape:max-h-[500px]:mb-2 landscape:max-h-[500px]:sm:mb-3 landscape:max-h-[500px]:md:mb-4" />

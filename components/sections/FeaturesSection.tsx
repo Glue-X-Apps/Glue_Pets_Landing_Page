@@ -3,14 +3,14 @@ import { Heart, Calendar, Target, TrendingUp } from "lucide-react";
 
 interface FeaturesSectionProps {
   isActive: boolean;
+  isMobile?: boolean;
 }
 
-export function FeaturesSection({ isActive }: FeaturesSectionProps) {
+export function FeaturesSection({ isActive, isMobile }: FeaturesSectionProps) {
   return (
     <section
-      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 transition-all duration-700 landscape:max-h-[500px]:overflow-y-auto landscape:max-h-[500px]:justify-start landscape:max-h-[500px]:pt-3 landscape:max-h-[500px]:pb-4 group-data-[mlh=true]:overflow-y-auto group-data-[mlh=true]:justify-start group-data-[mlh=true]:pt-3 group-data-[mlh=true]:pb-4 ${
-        isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-      }`}
+      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 transition-all duration-700 ${isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-6xl h-full flex items-center py-4 sm:py-6 md:py-8 lg:py-12 landscape:max-h-[500px]:py-2 landscape:max-h-[500px]:lg:py-4">
         <div className="w-full">

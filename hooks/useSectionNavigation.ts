@@ -6,7 +6,7 @@ const SCROLL_THROTTLE = 800;
 const WHEEL_THRESHOLD = 30;
 const TOUCH_THRESHOLD = 50;
 
-export function useSectionNavigation(totalSections: number): SectionNavigationHook {
+export function useSectionNavigation(totalSections: number, enabled: boolean = true): SectionNavigationHook {
   const [currentSection, setCurrentSection] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const touchStartY = useRef(0);
@@ -18,8 +18,8 @@ export function useSectionNavigation(totalSections: number): SectionNavigationHo
   }, []);
 
   const canNavigate = useCallback((now: number) => {
-    return !isTransitioning && now - lastScrollTime.current >= SCROLL_THROTTLE;
-  }, [isTransitioning]);
+    return enabled && !isTransitioning && now - lastScrollTime.current >= SCROLL_THROTTLE;
+  }, [isTransitioning, enabled]);
 
   const goToNextSection = useCallback(() => {
     const now = Date.now();
@@ -40,13 +40,15 @@ export function useSectionNavigation(totalSections: number): SectionNavigationHo
   }, [canNavigate, currentSection, startTransition]);
 
   const navigateToSection = useCallback((index: number) => {
-    if (index !== currentSection && !isTransitioning && index >= 0 && index < totalSections) {
+    if (enabled && index !== currentSection && !isTransitioning && index >= 0 && index < totalSections) {
       startTransition();
       setCurrentSection(index);
     }
-  }, [currentSection, isTransitioning, totalSections, startTransition]);
+  }, [currentSection, isTransitioning, totalSections, startTransition, enabled]);
 
   useEffect(() => {
+    if (!enabled) return;
+
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
 
@@ -91,7 +93,7 @@ export function useSectionNavigation(totalSections: number): SectionNavigationHo
       window.removeEventListener("touchend", handleTouchEnd);
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [goToNextSection, goToPreviousSection]);
+  }, [goToNextSection, goToPreviousSection, enabled]);
 
   return {
     currentSection,

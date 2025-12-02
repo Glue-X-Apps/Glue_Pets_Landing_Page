@@ -1,25 +1,39 @@
+import Image from "next/image";
+
 interface HeroSectionProps {
   isActive: boolean;
+  isMobile?: boolean;
+  subSectionIndex?: number;
 }
 
-export function HeroSection({ isActive }: HeroSectionProps) {
+export function HeroSection({ isActive, isMobile, subSectionIndex = 0 }: HeroSectionProps) {
   return (
     <section
-      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 transition-all duration-700 landscape:max-h-[500px]:overflow-y-auto landscape:max-h-[500px]:justify-start landscape:max-h-[500px]:pt-3 landscape:max-h-[500px]:pb-4 group-data-[mlh=true]:overflow-y-auto group-data-[mlh=true]:justify-start group-data-[mlh=true]:pt-3 group-data-[mlh=true]:pb-4 ${
-        isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-      }`}
+      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 transition-all duration-700 ${isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+        }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 h-full flex items-center py-4 sm:py-6 md:py-8 landscape:max-h-[500px]:py-2">
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center w-full max-w-6xl mx-auto landscape:max-h-[500px]:gap-2 landscape:max-h-[500px]:max-w-4xl">
-          {/* Left column - Content */}
-          <div className="text-center md:text-left space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8 landscape:max-h-[500px]:space-y-2">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 h-full flex items-center py-4 sm:py-6 md:py-8 landscape:max-h-[500px]:py-2 relative overflow-hidden">
+        <div className={`w-full h-full max-w-6xl mx-auto ${isMobile ? 'relative' : 'grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center'}`}>
+
+          {/* Part 1: Text Content */}
+          <div
+            className={`
+              flex flex-col justify-center h-full md:h-auto text-center md:text-left space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8 landscape:max-h-[500px]:space-y-2
+              transition-all duration-700 ease-in-out
+              ${isMobile ? 'absolute inset-0 px-4' : 'relative'}
+              ${isMobile && subSectionIndex === 0 ? 'opacity-100 translate-y-0' : ''}
+              ${isMobile && subSectionIndex === 1 ? 'opacity-0 -translate-y-full pointer-events-none' : ''}
+            `}
+          >
             <div className="flex justify-center md:justify-start">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full flex items-center justify-center shadow-2xl">
-                <svg viewBox="0 0 100 100" className="w-10 h-10 md:w-12 md:h-12">
-                  <path d="M50,20 Q30,40 30,60 Q30,80 50,90 Q70,80 70,60 Q70,40 50,20 Z" fill="white" />
-                  <ellipse cx="45" cy="55" rx="3" ry="4" fill="#3b82f6" />
-                  <ellipse cx="55" cy="55" rx="3" ry="4" fill="#3b82f6" />
-                </svg>
+              <div className="w-24 h-24 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-2xl">
+                <Image
+                  src="/img/GluePetsLogo.png"
+                  alt="GluePets Logo"
+                  width={200}
+                  height={200}
+                  className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                />
               </div>
             </div>
 
@@ -39,13 +53,13 @@ export function HeroSection({ isActive }: HeroSectionProps) {
                 <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
                 </svg>
-                                <div className="text-left">
+                <div className="text-left">
                   <div className="text-xs sm:text-sm md:text-base leading-tight opacity-90 landscape:max-h-[500px]:text-[10px] landscape:max-h-[500px]:sm:text-xs landscape:max-h-[500px]:md:text-sm">Disponible en</div>
                   <div className="text-sm sm:text-base md:text-lg font-semibold leading-tight landscape:max-h-[500px]:text-xs landscape:max-h-[500px]:sm:text-sm landscape:max-h-[500px]:md:text-base">Google Play</div>
                 </div>
               </a>
 
-                            <button
+              <button
                 disabled
                 className="inline-flex items-center justify-center gap-2 bg-black/40 text-white/60 px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl cursor-not-allowed shadow-lg text-sm sm:text-base md:text-lg landscape:max-h-[500px]:px-3 landscape:max-h-[500px]:py-2 landscape:max-h-[500px]:text-xs landscape:max-h-[500px]:sm:text-sm"
               >
@@ -60,42 +74,32 @@ export function HeroSection({ isActive }: HeroSectionProps) {
             </div>
           </div>
 
-          <div className="flex justify-center md:justify-end mt-4 sm:mt-6 md:mt-0 order-1 md:order-2 landscape:max-h-[500px]:mt-2">
+          {/* Part 2: Phone Image */}
+          <div
+            className={`
+              justify-center md:justify-end mt-4 sm:mt-6 md:mt-0 order-1 md:order-2 landscape:max-h-[500px]:mt-2 h-full md:h-auto items-center
+              transition-all duration-700 ease-in-out
+              ${isMobile ? 'absolute inset-0 flex' : 'flex relative'}
+              ${isMobile && subSectionIndex === 0 ? 'opacity-0 translate-y-full pointer-events-none' : ''}
+              ${isMobile && subSectionIndex === 1 ? 'opacity-100 translate-y-0' : ''}
+            `}
+          >
             <div className="relative">
               {/* Glow effect */}
               <div className="absolute -inset-3 sm:-inset-4 md:-inset-6 rounded-3xl blur-3xl animate-pulse landscape:max-h-[500px]:-inset-2"></div>
 
               {/* Phone mockup */}
-              <div className="relative aspect-[9/19.5] w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 bg-slate-950 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] shadow-2xl border-[3px] sm:border-[4px] md:border-[6px] border-slate-800 overflow-hidden landscape:max-h-[500px]:w-32 landscape:max-h-[500px]:sm:w-40 landscape:max-h-[500px]:md:w-48 landscape:max-h-[500px]:border-[2px] landscape:max-h-[500px]:sm:border-[3px] landscape:max-h-[500px]:rounded-[1rem] landscape:max-h-[500px]:sm:rounded-[1.5rem]">
+              <div className="relative aspect-[9/19.5] w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 bg-slate-950 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] shadow-2xl border-[3px] sm:border-[4px] md:border-[6px] border-slate-800 overflow-hidden landscape:max-h-[500px]:w-36 landscape:max-h-[500px]:sm:w-44 landscape:max-h-[500px]:md:w-52 landscape:max-h-[500px]:border-[2px] landscape:max-h-[500px]:sm:border-[3px] landscape:max-h-[500px]:rounded-[1rem] landscape:max-h-[500px]:sm:rounded-[1.5rem]">
                 {/* Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-slate-950 rounded-b-3xl z-10"></div>
 
-                {/* App screenshot placeholder - User can replace this */}
-                <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 flex items-center justify-center p-4 sm:p-6 md:p-8 landscape:max-h-[500px]:p-2 landscape:max-h-[500px]:sm:p-3 landscape:max-h-[500px]:md:p-4">
-                  <div className="text-center space-y-2 sm:space-y-3 md:space-y-4 landscape:max-h-[500px]:space-y-1 landscape:max-h-[500px]:sm:space-y-2">
-                    <div className="w-12 h-12 sm:w-16 md:w-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto shadow-xl landscape:max-h-[500px]:w-8 landscape:max-h-[500px]:h-8 landscape:max-h-[500px]:sm:w-10 landscape:max-h-[500px]:sm:h-10 landscape:max-h-[500px]:md:w-12 landscape:max-h-[500px]:md:h-12 landscape:max-h-[500px]:rounded-xl landscape:max-h-[500px]:sm:rounded-2xl">
-                      <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-10 md:w-12 landscape:max-h-[500px]:w-6 landscape:max-h-[500px]:h-6 landscape:max-h-[500px]:sm:w-8 landscape:max-h-[500px]:md:w-10">
-                        <path d="M50,20 Q30,40 30,60 Q30,80 50,90 Q70,80 70,60 Q70,40 50,20 Z" fill="white" />
-                        <ellipse cx="45" cy="55" rx="3" ry="4" fill="#3b82f6" />
-                        <ellipse cx="55" cy="55" rx="3" ry="4" fill="#3b82f6" />
-                      </svg>
-                    </div>
-                    <div className="space-y-1 sm:space-y-2">
-                      <div className="text-white font-bold text-base sm:text-lg md:text-xl landscape:max-h-[500px]:text-sm landscape:max-h-[500px]:sm:text-base landscape:max-h-[500px]:md:text-lg">GluePets</div>
-                      <div className="text-slate-400 text-xs sm:text-sm landscape:max-h-[500px]:text-[10px] landscape:max-h-[500px]:sm:text-xs">
-                        Coloca aquí la captura
-                        <br />
-                        de tu app
-                      </div>
-                    </div>
-                    {/* Decorative elements */}
-                    <div className="space-y-3 pt-4">
-                      <div className="h-12 bg-slate-800/50 rounded-xl backdrop-blur-sm"></div>
-                      <div className="h-12 bg-slate-800/50 rounded-xl backdrop-blur-sm"></div>
-                      <div className="h-12 bg-slate-800/50 rounded-xl backdrop-blur-sm"></div>
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  src="/img/hero-img.jpg"
+                  alt="GluePets App Screenshot"
+                  fill
+                  className="fill"
+                  priority
+                />
               </div>
             </div>
           </div>
