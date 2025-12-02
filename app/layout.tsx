@@ -16,7 +16,12 @@ export const metadata: Metadata = {
     title: "GluePets — Seguimiento nutricional para mascotas",
     description:
       "GluePets te ayuda a controlar la alimentación de tus mascotas, registrar comidas y establecer metas nutricionales personalizadas.",
-    images: ["/images/og-placeholder.png"],
+    images: ["/img/GluePetsLogo.png"],
+  },
+  icons: {
+    icon: "/img/GluePetsLogo.png",
+    shortcut: "/img/GluePetsLogo.png",
+    apple: "/img/GluePetsLogo.png",
   },
 }
 
