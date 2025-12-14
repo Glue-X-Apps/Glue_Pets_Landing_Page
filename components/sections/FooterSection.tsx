@@ -26,15 +26,9 @@ export function FooterSection({ isActive, isMobile }: FooterSectionProps) {
 
         <div className="flex justify-center gap-4 sm:gap-6 mb-3 sm:mb-4 md:mb-8 landscape:max-h-[500px]:gap-2 landscape:max-h-[500px]:sm:gap-3 landscape:max-h-[500px]:mb-1 landscape:max-h-[500px]:sm:mb-2 landscape:max-h-[500px]:md:mb-3">
           <a
-            href="#"
-            className="w-12 h-12 bg-slate-800 hover:bg-slate-700 rounded-full flex items-center justify-center transition-colors landscape:max-h-[500px]:w-8 landscape:max-h-[500px]:h-8"
-          >
-            <svg className="w-6 h-6 landscape:max-h-[500px]:w-4 landscape:max-h-[500px]:h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-          </a>
-          <a
-            href="#"
+            href="https://www.instagram.com/gluepets?igsh=aHU3djFsNjN6M284"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-12 h-12 bg-slate-800 hover:bg-slate-700 rounded-full flex items-center justify-center transition-colors landscape:max-h-[500px]:w-8 landscape:max-h-[500px]:h-8"
           >
             <svg className="w-6 h-6 landscape:max-h-[500px]:w-4 landscape:max-h-[500px]:h-4" fill="currentColor" viewBox="0 0 24 24">
