@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { SectionNavigationHook } from '@/types';
 
-const TRANSITION_DURATION = 800;
-const SCROLL_THROTTLE = 800;
-const WHEEL_THRESHOLD = 30;
-const TOUCH_THRESHOLD = 50;
+const TRANSITION_DURATION = 700;
+const SCROLL_THROTTLE = 700;
+const WHEEL_THRESHOLD = 15;
+const TOUCH_THRESHOLD = 25;
 
 export function useSectionNavigation(totalSections: number, enabled: boolean = true): SectionNavigationHook {
   const [currentSection, setCurrentSection] = useState(0);
