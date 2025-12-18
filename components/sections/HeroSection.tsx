@@ -38,7 +38,7 @@ export function HeroSection({ isActive, isMobile, subSectionIndex = 0 }: HeroSec
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
               <a
-                href="https://play.google.com/apps/internaltest/4701698282739752291"
+                href="https://play.google.com/apps/testing/com.gluepets.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-white text-slate-900 px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:bg-blue-50 shadow-lg border border-transparent"
