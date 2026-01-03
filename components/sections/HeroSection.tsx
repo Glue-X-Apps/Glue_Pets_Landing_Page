@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GOOGLE_PLAY_URL } from "@/lib/constants";
 
 interface HeroSectionProps {
   isActive: boolean;
@@ -38,7 +39,7 @@ export function HeroSection({ isActive, isMobile, subSectionIndex = 0 }: HeroSec
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
               <a
-                href="https://play.google.com/apps/testing/com.gluepets.app"
+                href={GOOGLE_PLAY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-white text-slate-900 px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:bg-blue-50 shadow-lg border border-transparent"
@@ -47,7 +48,7 @@ export function HeroSection({ isActive, isMobile, subSectionIndex = 0 }: HeroSec
                   <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
                 </svg>
                 <div className="text-left leading-tight">
-                  <div className="text-xs uppercase font-bold tracking-wider opacity-70">Versión de Prueba</div>
+                  <div className="text-xs uppercase font-bold tracking-wider opacity-70">Disponible en</div>
                   <div className="text-sm font-bold font-sans">Google Play</div>
                 </div>
               </a>
