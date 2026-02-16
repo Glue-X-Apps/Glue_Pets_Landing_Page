@@ -1,30 +1,45 @@
-import { Sparkles } from "lucide-react";
+"use client"
 
-interface PremiumSectionProps {
-  isActive: boolean;
-  isMobile?: boolean;
-}
+import { Sparkles, Trophy, Star, Crown } from "lucide-react";
 
-export function PremiumSection({ isActive, isMobile }: PremiumSectionProps) {
+export function PremiumSection({ isActive }: { isActive: boolean }) {
   return (
     <section
-      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 text-white transition-all duration-700 ${isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-        }`}
+      id="premium"
+      className={`min-h-screen w-full flex items-center justify-center py-24 transition-all duration-1000 ${isActive ? 'opacity-100' : 'opacity-0'}`}
     >
-      <div className="container mx-auto px-4 sm:px-6 max-w-3xl text-center py-4 sm:py-6 landscape:max-h-[500px]:py-2">
-        <Sparkles className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-4 sm:mb-5 md:mb-6 text-cyan-200 landscape:max-h-[500px]:w-8 landscape:max-h-[500px]:h-8 landscape:max-h-[500px]:sm:w-10 landscape:max-h-[500px]:sm:h-10 landscape:max-h-[500px]:md:w-12 landscape:max-h-[500px]:md:h-12 landscape:max-h-[500px]:mb-2 landscape:max-h-[500px]:sm:mb-3 landscape:max-h-[500px]:md:mb-4" />
+      <div className="container mx-auto px-6">
+        <div className="glass p-12 md:p-20 rounded-[3rem] border-white/10 relative overflow-hidden bg-gradient-to-br from-primary/20 via-slate-900 to-accent/20">
+          <div className="absolute top-0 right-0 p-8">
+            <Sparkles className="text-primary w-12 h-12 opacity-50" />
+          </div>
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-balance landscape:max-h-[500px]:text-lg landscape:max-h-[500px]:sm:text-xl landscape:max-h-[500px]:md:text-2xl landscape:max-h-[500px]:lg:text-3xl landscape:max-h-[500px]:mb-1 landscape:max-h-[500px]:sm:mb-2 landscape:max-h-[500px]:md:mb-3">GluePets Premium</h2>
+          <div className="max-w-3xl space-y-8 relative z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white font-bold">
+              <Crown className="w-5 h-5 text-yellow-500" />
+              Evolución GluePets
+            </div>
 
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-blue-50 mb-4 sm:mb-6 md:mb-8 text-balance max-w-2xl mx-auto px-2 sm:px-0 landscape:max-h-[500px]:text-xs landscape:max-h-[500px]:sm:text-sm landscape:max-h-[500px]:md:text-base landscape:max-h-[500px]:lg:text-lg landscape:max-h-[500px]:xl:text-xl landscape:max-h-[500px]:mb-2 landscape:max-h-[500px]:sm:mb-3 landscape:max-h-[500px]:md:mb-4">
-          Próximamente: gestión de múltiples mascotas, estadísticas avanzadas y recomendaciones inteligentes
-          personalizadas
-        </p>
+            <h2 className="text-4xl md:text-7xl font-bold leading-tight">
+              Próximamente: <span className="text-gradient">El futuro</span> del cuidado animal
+            </h2>
 
-        <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 xl:w-56 xl:h-56 bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl flex items-center justify-center border border-white/20 mx-auto landscape:max-h-[500px]:w-24 landscape:max-h-[500px]:h-24 landscape:max-h-[500px]:sm:w-28 landscape:max-h-[500px]:sm:h-28 landscape:max-h-[500px]:md:w-32 landscape:max-h-[500px]:md:h-32 landscape:max-h-[500px]:lg:w-36 landscape:max-h-[500px]:lg:h-36 landscape:max-h-[500px]:xl:w-40 landscape:max-h-[500px]:xl:h-40 landscape:max-h-[500px]:rounded-xl landscape:max-h-[500px]:sm:rounded-2xl">
-          <Sparkles className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white landscape:max-h-[500px]:w-8 landscape:max-h-[500px]:h-8 landscape:max-h-[500px]:sm:w-10 landscape:max-h-[500px]:sm:h-10 landscape:max-h-[500px]:md:w-12 landscape:max-h-[500px]:md:h-12 landscape:max-h-[500px]:lg:w-14 landscape:max-h-[500px]:lg:h-14" />
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              Estamos construyendo herramientas de análisis predictivo, integración total con dispositivos IoT y una red global de expertos.
+            </p>
+
+            <div className="flex flex-wrap gap-4 pt-4">
+              {["Multi-mascota", "Recomendaciones AI", "Acceso Prioritario"].map((tag) => (
+                <span key={tag} className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-accent/20 blur-[120px] rounded-full"></div>
         </div>
       </div>
     </section>
-  );
+  )
 }

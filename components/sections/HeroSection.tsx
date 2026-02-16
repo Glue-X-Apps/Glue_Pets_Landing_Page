@@ -28,43 +28,31 @@ export function HeroSection({ isActive, isMobile, subSectionIndex = 0 }: HeroSec
             `}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white text-balance leading-[1.1] tracking-tight">
-              El seguimiento <br className="hidden md:block" />
-              <span className="text-blue-500">nutricional</span> que tu <br className="hidden md:block" />
-              mascota merece.
+              La conexión <br className="hidden md:block" />
+              <span className="text-gradient">inteligente</span> entre <br className="hidden md:block" />
+              mascotas y salud.
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 text-balance font-normal max-w-lg mx-auto md:mx-0">
-              Controla la alimentación de tu perro o gato con precisión profesional.
+              GluePets une a los dueños con sus veterinarias mediante tecnología de seguimiento nutricional y médico avanzada.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
               <a
-                href={GOOGLE_PLAY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-white text-slate-900 px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:bg-blue-50 shadow-lg border border-transparent"
+                href="#b2c"
+                className="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl transition-all duration-300 hover:shadow-premium hover:-translate-y-1 font-bold group"
               >
-                <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                </svg>
-                <div className="text-left leading-tight">
-                  <div className="text-xs uppercase font-bold tracking-wider opacity-70">Disponible en</div>
-                  <div className="text-sm font-bold font-sans">Google Play</div>
-                </div>
+                Soy Dueño
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
 
-              <button
-                disabled
-                className="inline-flex items-center justify-center gap-3 bg-[#1e293b]/60 backdrop-blur-md text-white px-6 py-3 rounded-xl border border-white/10 transition-all cursor-not-allowed hover:bg-[#1e293b]/80"
+              <a
+                href="#b2b"
+                className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-2xl border border-white/20 transition-all hover:bg-white/20 font-bold group"
               >
-                <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
-                </svg>
-                <div className="text-left leading-tight">
-                  <div className="text-xs uppercase font-bold tracking-wider opacity-60">Próximamente en</div>
-                  <div className="text-sm font-bold font-sans">App Store</div>
-                </div>
-              </button>
+                Soy Veterinaria
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
             </div>
           </div>
 

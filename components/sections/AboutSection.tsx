@@ -1,149 +1,78 @@
-import { Heart, Calendar, Target, TrendingUp } from "lucide-react";
+"use client"
 
-interface AboutSectionProps {
-  isActive: boolean;
-  isMobile?: boolean;
-  subSectionIndex?: number;
-}
+import { Heart, Utensils, Syringe, Scale } from "lucide-react";
 
-export function AboutSection({ isActive, isMobile, subSectionIndex = 0 }: AboutSectionProps) {
+export function AboutSection({ isActive }: { isActive: boolean }) {
+  const points = [
+    { icon: Utensils, title: "Diario de Comidas", desc: "Registra marcas, porciones y calcula calorías." },
+    { icon: Scale, title: "Control de Peso", desc: "Gráficos de evolución y alertas de desviación." },
+    { icon: Syringe, title: "Vacunas y Desparasitaciones", desc: "Recordatorios automáticos sincronizados con tu vet." },
+    { icon: Heart, title: "Bienestar General", desc: "Monitorea síntomas y actividad diaria." }
+  ]
+
   return (
     <section
-      className={`absolute inset-0 w-full h-full flex items-center justify-center bg-slate-800 transition-all duration-700 ${isActive ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-        }`}
+      id="about"
+      className={`min-h-screen w-full flex items-center justify-center py-20 transition-all duration-1000 ${isActive ? 'opacity-100' : 'opacity-0'}`}
     >
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-6xl h-full flex items-center py-4 sm:py-6 md:py-8 landscape:max-h-[500px]:py-2 relative overflow-hidden">
-        <div className={`w-full h-full ${isMobile ? 'relative' : 'grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center'}`}>
-
-          {/* Part 1: Text Content */}
-          <div
-            className={`
-              space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 landscape:max-h-[500px]:space-y-2 landscape:max-h-[500px]:sm:space-y-3 landscape:max-h-[500px]:md:space-y-4 flex flex-col justify-center h-full
-              transition-all duration-700 ease-in-out
-              ${isMobile ? 'absolute inset-0 px-4' : 'relative'}
-              ${isMobile && subSectionIndex === 0 ? 'opacity-100 translate-y-0' : ''}
-              ${isMobile && subSectionIndex === 1 ? 'opacity-0 -translate-y-full pointer-events-none' : ''}
-            `}
-          >
-            <div className="flex justify-center md:justify-start">
-              <span className="text-xs sm:text-sm font-semibold text-blue-400 bg-blue-950/50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-blue-800">
-                Sobre GluePets
-              </span>
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-balance leading-tight text-center md:text-left landscape:max-h-[500px]:text-lg landscape:max-h-[500px]:sm:text-xl landscape:max-h-[500px]:md:text-2xl landscape:max-h-[500px]:lg:text-3xl">
-              Nutrición inteligente para tus mejores amigos
-            </h2>
-
-            <div className="space-y-4 sm:space-y-3 md:space-y-4 landscape:max-h-[500px]:space-y-1.5 landscape:max-h-[500px]:sm:space-y-2 landscape:max-h-[500px]:md:space-y-2.5">
-              <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start landscape:max-h-[500px]:gap-2">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 landscape:max-h-[500px]:w-6 landscape:max-h-[500px]:h-6 landscape:max-h-[500px]:sm:w-7 landscape:max-h-[500px]:sm:h-7 landscape:max-h-[500px]:mt-0.5">
-                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 landscape:max-h-[500px]:w-3 landscape:max-h-[500px]:h-3 landscape:max-h-[500px]:sm:w-4 landscape:max-h-[500px]:sm:h-4" />
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1 relative">
+            <div className="glass p-6 rounded-[2.5rem] bg-slate-900/40 relative overflow-hidden group border border-white/5">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none"></div>
+              <div className="space-y-6">
+                <div className="bg-primary/20 p-6 rounded-3xl border border-primary/20 backdrop-blur-sm">
+                  <div className="flex justify-between items-end">
+                    <div className="space-y-1">
+                      <p className="text-primary text-sm font-bold uppercase tracking-widest">Estado Nutricional</p>
+                      <p className="text-3xl font-bold text-white">Óptimo</p>
+                    </div>
+                    <Heart className="w-10 h-10 text-primary animate-pulse" fill="currentColor" />
+                  </div>
                 </div>
-                <div className="text-center sm:text-left">
-                  <h3 className="text-base sm:text-lg font-semibold text-white mb-1 landscape:max-h-[500px]:text-sm landscape:max-h-[500px]:sm:text-base landscape:max-h-[500px]:mb-0.5">Registro diario simplificado</h3>
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed landscape:max-h-[500px]:text-xs landscape:max-h-[500px]:sm:text-sm">
-                    Anota comidas y porciones en segundos con nuestra interfaz intuitiva
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start landscape:max-h-[500px]:gap-2">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 landscape:max-h-[500px]:w-6 landscape:max-h-[500px]:h-6 landscape:max-h-[500px]:sm:w-7 landscape:max-h-[500px]:sm:h-7 landscape:max-h-[500px]:mt-0.5">
-                  <Target className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 landscape:max-h-[500px]:w-3 landscape:max-h-[500px]:h-3 landscape:max-h-[500px]:sm:w-4 landscape:max-h-[500px]:sm:h-4" />
-                </div>
-                <div className="text-center sm:text-left">
-                  <h3 className="text-base sm:text-lg font-semibold text-white mb-1 landscape:max-h-[500px]:text-sm landscape:max-h-[500px]:sm:text-base landscape:max-h-[500px]:mb-0.5">Metas personalizadas</h3>
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed landscape:max-h-[500px]:text-xs landscape:max-h-[500px]:sm:text-sm">
-                    Establece objetivos según edad, peso y nivel de actividad
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start landscape:max-h-[500px]:gap-2">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 landscape:max-h-[500px]:w-6 landscape:max-h-[500px]:h-6 landscape:max-h-[500px]:sm:w-7 landscape:max-h-[500px]:sm:h-7 landscape:max-h-[500px]:mt-0.5">
-                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 landscape:max-h-[500px]:w-3 landscape:max-h-[500px]:h-3 landscape:max-h-[500px]:sm:w-4 landscape:max-h-[500px]:sm:h-4" />
-                </div>
-                <div className="text-center sm:text-left">
-                  <h3 className="text-base sm:text-lg font-semibold text-white mb-1 landscape:max-h-[500px]:text-sm landscape:max-h-[500px]:sm:text-base landscape:max-h-[500px]:mb-0.5">Control nutricional preciso</h3>
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed landscape:max-h-[500px]:text-xs landscape:max-h-[500px]:sm:text-sm">
-                    Monitorea calorías, proteínas y macronutrientes en tiempo real
-                  </p>
+                <div className="grid gap-4">
+                  {[
+                    { title: "Desayuno", time: "8:00 AM", color: "bg-orange-400" },
+                    { title: "Paseo Matutino", time: "9:30 AM", color: "bg-blue-400" },
+                    { title: "Cena", time: "7:00 PM", color: "bg-purple-400" }
+                  ].map((item, idx) => (
+                    <div key={idx} className="bg-white/5 p-4 rounded-2xl border border-white/5 flex justify-between items-center transition-transform hover:translate-x-2">
+                      <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
+                      <div className="flex-1 px-4 text-sm font-medium text-slate-200">{item.title}</div>
+                      <div className="text-slate-500 text-xs">{item.time}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+            <div className="absolute -z-10 -bottom-10 -left-10 w-64 h-64 bg-primary/20 blur-[100px] rounded-full"></div>
           </div>
 
-          {/* Part 2: Visual Content */}
-          <div
-            className={`
-              flex justify-center md:justify-end landscape:max-h-[500px]:mt-2 items-center h-full
-              transition-all duration-700 ease-in-out
-              ${isMobile ? 'absolute inset-0' : 'relative'}
-              ${isMobile && subSectionIndex === 0 ? 'opacity-0 translate-y-full pointer-events-none' : ''}
-              ${isMobile && subSectionIndex === 1 ? 'opacity-100 translate-y-0' : ''}
-            `}
-          >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl landscape:max-h-[500px]:-inset-2"></div>
-              <div className="relative aspect-[9/16] w-56 sm:w-64 md:w-72 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 rounded-3xl shadow-2xl border-4 sm:border-8 border-slate-600 overflow-hidden landscape:max-h-[500px]:w-40 landscape:max-h-[500px]:sm:w-48 landscape:max-h-[500px]:md:w-56 landscape:max-h-[500px]:border-2 landscape:max-h-[500px]:sm:border-4 landscape:max-h-[500px]:rounded-2xl">
-                <div className="absolute top-0 left-0 right-0 h-8 bg-slate-900/50 flex items-center justify-center">
-                  <div className="w-20 h-1 bg-slate-700 rounded-full"></div>
-                </div>
+          <div className="order-1 lg:order-2 space-y-8">
+            <div className="space-y-4">
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                Diseñado para el <span className="text-gradient">bienestar integral</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                No somos solo una App de seguimiento. Somos el puente entre el amor por tu mascota y la ciencia de su nutrición.
+              </p>
+            </div>
 
-                <div className="p-4 sm:p-6 pt-12 sm:pt-14 h-full flex flex-col">
-                  <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl p-4 sm:p-6 mb-4 shadow-lg">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-full flex items-center justify-center">
-                        <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-white/80 text-xs">Hoy</p>
-                        <p className="text-white font-bold text-sm sm:text-base">1,250 / 1,500 kcal</p>
-                      </div>
-                    </div>
-                    <div className="w-full bg-white/20 rounded-full h-2">
-                      <div className="bg-white rounded-full h-2" style={{ width: "83%" }}></div>
-                    </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {points.map((p, i) => (
+                <div key={i} className="space-y-2 hover:bg-white/5 p-4 rounded-xl transition-colors -ml-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+                    <p.icon size={20} />
                   </div>
-
-                  <div className="space-y-2 sm:space-y-3 flex-1">
-                    <div className="bg-slate-700/50 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="text-white font-medium text-xs sm:text-sm">Desayuno</p>
-                          <p className="text-slate-400 text-xs">8:00 AM</p>
-                        </div>
-                        <p className="text-blue-400 font-bold text-sm sm:text-base">350 kcal</p>
-                      </div>
-                    </div>
-
-                    <div className="bg-slate-700/50 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="text-white font-medium text-xs sm:text-sm">Almuerzo</p>
-                          <p className="text-slate-400 text-xs">2:00 PM</p>
-                        </div>
-                        <p className="text-cyan-400 font-bold text-sm sm:text-base">550 kcal</p>
-                      </div>
-                    </div>
-
-                    <div className="bg-slate-700/50 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="text-white font-medium text-xs sm:text-sm">Cena</p>
-                          <p className="text-slate-400 text-xs">7:00 PM</p>
-                        </div>
-                        <p className="text-blue-400 font-bold text-sm sm:text-base">350 kcal</p>
-                      </div>
-                    </div>
-                  </div>
+                  <h3 className="font-bold text-lg">{p.title}</h3>
+                  <p className="text-muted-foreground text-sm">{p.desc}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
