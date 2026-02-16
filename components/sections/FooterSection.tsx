@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { Instagram } from "lucide-react";
 
-export function FooterSection({ isActive, onSwitchView }: { isActive: boolean; onSwitchView?: (view: 'OWNER' | 'VET') => void }) {
+import Link from "next/link";
+
+export function FooterSection({ isActive }: { isActive: boolean }) {
   // Always active in the new layout
   return (
     <footer
@@ -61,20 +63,20 @@ export function FooterSection({ isActive, onSwitchView }: { isActive: boolean; o
             <h4 className="font-bold text-white mb-6">Explora</h4>
             <ul className="space-y-4 text-slate-400">
               <li>
-                <button
-                  onClick={() => onSwitchView?.('OWNER')}
+                <Link
+                  href="/"
                   className="hover:text-primary transition-colors text-left"
                 >
                   Para Dueños
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => onSwitchView?.('VET')}
+                <Link
+                  href="/veterinarias"
                   className="hover:text-accent transition-colors text-left"
                 >
                   Para Veterinarias
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

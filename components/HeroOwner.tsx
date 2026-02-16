@@ -61,12 +61,13 @@ export function HeroOwner() {
                         <div className="relative w-full max-w-[500px] aspect-[4/5]">
                             <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-[3rem] border border-white/5 backdrop-blur-sm"></div>
                             <Image
-                                src="/img/hero-gluepets.png"
+                                src="/img/hero-gluepets-optimized.png"
                                 alt="GluePets App Interface"
                                 width={600}
                                 height={800}
                                 className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] max-w-none drop-shadow-2xl"
                                 priority
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                             />
 
                             {/* Floating Cards - Simplified */}
