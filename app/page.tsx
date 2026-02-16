@@ -12,8 +12,30 @@ export const metadata = {
 }
 
 export default function GluePetsLanding() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'GluePets',
+    operatingSystem: 'ANDROID, IOS',
+    applicationCategory: 'HealthApplication',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '1024',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  }
+
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary transition-colors duration-700 font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <ViewToggle mode="OWNER" />
 

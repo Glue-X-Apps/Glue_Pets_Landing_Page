@@ -12,8 +12,25 @@ export const metadata = {
 }
 
 export default function VeterinariasPage() {
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'GluePets Vet',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web',
+        offers: {
+            '@type': 'Offer',
+            price: '29',
+            priceCurrency: 'USD',
+        },
+    }
+
     return (
         <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary transition-colors duration-700 font-sans">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
             {/* Navigation will be updated later to be shared/context aware */}
             <ViewToggle mode="VET" />

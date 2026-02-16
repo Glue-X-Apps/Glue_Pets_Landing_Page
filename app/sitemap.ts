@@ -14,5 +14,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 0.9,
         },
+        {
+            url: 'https://gluepets.click/privacy',
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.5,
+        },
+        {
+            url: 'https://gluepets.click/terms',
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.5,
+        },
+        {
+            url: 'https://gluepets.click/account-deletion',
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.3,
+        },
+        {
+            url: 'https://gluepets.click/subprocessors',
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.3,
+        },
     ]
 }
