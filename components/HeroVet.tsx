@@ -48,9 +48,9 @@ export function HeroVet() {
                         autoPlay
                         preload="auto"
                         onCanPlay={() => setIsVideoLoaded(true)}
-                        className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none translate-x-[60px] lg:translate-x-[150px] ${isVideoLoaded ? 'opacity-85' : 'opacity-0'}`}
+                        className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none translate-x-[80px] lg:translate-x-[200px] ${isVideoLoaded ? 'opacity-85' : 'opacity-0'}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#070C15] via-[#070C15]/90 lg:via-[#070C15]/80 to-[#070C15]/60 lg:to-[#070C15]/20 z-10 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#070C15] via-[#070C15]/70 lg:via-[#070C15]/30 to-[#070C15]/40 lg:to-transparent z-10 pointer-events-none"></div>
                     
                     {/* Subtle loader overlay */}
                     <div className={`absolute inset-0 flex items-center justify-center bg-[#070C15] transition-opacity duration-700 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
