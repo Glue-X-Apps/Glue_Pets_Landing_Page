@@ -13,10 +13,10 @@ interface DownloadModalProps {
 export function DownloadModal({ isOpen, onClose, onOpenWaitlist }: DownloadModalProps) {
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-md bg-slate-950 border border-slate-800 text-white rounded-3xl p-8">
+            <DialogContent className="sm:max-w-md bg-[#FAF8F5] border border-slate-200 text-slate-900 rounded-3xl p-8 shadow-2xl">
                 <DialogHeader>
-                    <DialogTitle className="text-center text-3xl font-bold">Descarga GluePets</DialogTitle>
-                    <p className="text-center text-slate-400 mt-2 text-base">
+                    <DialogTitle className="text-center text-3xl font-bold font-serif text-slate-900">Descarga GluePets</DialogTitle>
+                    <p className="text-center text-slate-600 mt-2 text-base">
                         Tu mascota te lo agradecerá. <br /> Elige tu plataforma para comenzar.
                     </p>
                 </DialogHeader>
@@ -27,10 +27,10 @@ export function DownloadModal({ isOpen, onClose, onOpenWaitlist }: DownloadModal
                         href="https://play.google.com/store/apps/details?id=com.gluepets.app"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-center gap-4 w-full bg-white text-black p-4 rounded-xl hover:bg-slate-200 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-white/5"
+                        className="group flex items-center gap-4 w-full bg-slate-900 text-white p-4 rounded-xl hover:bg-slate-800 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-md border border-slate-850"
                     >
                         <div className="w-10 h-10 flex items-center justify-center">
-                            <Play fill="currentColor" size={32} className="text-black" />
+                            <Play fill="currentColor" size={32} className="text-white" />
                         </div>
                         <div className="flex flex-col items-start leading-none">
                             <span className="text-[10px] font-bold uppercase tracking-wider opacity-70">Disponible en</span>
@@ -41,10 +41,10 @@ export function DownloadModal({ isOpen, onClose, onOpenWaitlist }: DownloadModal
                     {/* App Store Button - Active Waitlist */}
                     <button
                         onClick={onOpenWaitlist}
-                        className="group flex items-center gap-4 w-full bg-slate-900 text-slate-300 p-4 rounded-xl border border-slate-800 hover:bg-slate-800 transition-all hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden"
+                        className="group flex items-center gap-4 w-full bg-white text-slate-800 p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition-all hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden shadow-sm"
                     >
                         <div className="w-10 h-10 flex items-center justify-center">
-                            <Apple fill="currentColor" size={36} className="pb-1" />
+                            <Apple fill="currentColor" size={36} className="pb-1 text-slate-800" />
                         </div>
                         <div className="flex flex-col items-start leading-none">
                             <span className="text-[10px] font-bold uppercase tracking-wider opacity-60">Consíguelo en el</span>
@@ -52,7 +52,7 @@ export function DownloadModal({ isOpen, onClose, onOpenWaitlist }: DownloadModal
                         </div>
 
                         {/* 'Coming Soon' Badge */}
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/20 px-3 py-1 rounded-full text-[10px] font-bold text-primary border border-primary/30 group-hover:scale-105 transition-transform">
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/10 px-3 py-1 rounded-full text-[10px] font-bold text-primary border border-primary/20 group-hover:scale-105 transition-transform">
                             Lista Espera
                         </div>
                     </button>
