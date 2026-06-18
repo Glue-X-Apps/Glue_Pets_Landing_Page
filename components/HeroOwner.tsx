@@ -48,11 +48,14 @@ export function HeroOwner() {
                         autoPlay
                         className="w-full h-full object-cover opacity-90 pointer-events-none"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#FAF8F5] via-[#FAF8F5]/96 lg:via-[#FAF8F5]/92 to-[#FAF8F5]/70 lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-l from-[#FAF8F5] via-[#FAF8F5]/96 lg:via-[#FAF8F5]/92 to-[#FAF8F5]/70 lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
                 </div>
 
                 <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                    <div className="space-y-8 text-center lg:text-left">
+                    {/* Column Left: Open visual space for the video background */}
+                    <div className="hidden lg:block"></div>
+
+                    <div className="space-y-8 text-center lg:text-left lg:pl-12">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 border border-slate-200/50 backdrop-blur-md shadow-sm">
                             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                             <span className="text-sm font-semibold text-slate-600">Bienestar & Salud</span>
@@ -76,9 +79,6 @@ export function HeroOwner() {
                             </button>
                         </div>
                     </div>
-
-                    {/* Column Right: Open visual space for the video background */}
-                    <div className="hidden lg:block"></div>
                 </div>
             </section>
 
