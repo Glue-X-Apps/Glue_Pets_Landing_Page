@@ -55,9 +55,6 @@ export function AboutSection({ isActive }: { isActive: boolean }) {
           className="w-full h-full object-cover opacity-90 pointer-events-none"
         />
         <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#FAF8F5] via-[#FAF8F5]/96 lg:via-[#FAF8F5]/92 to-[#FAF8F5]/70 lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
-        
-        {/* Blur patch to hide watermark in the bottom-right corner */}
-        <div className="absolute bottom-0 right-0 w-44 h-16 bg-gradient-to-br from-transparent via-[#FAF8F5]/25 to-[#FAF8F5] backdrop-blur-md z-15 pointer-events-none"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-20">
@@ -87,19 +84,20 @@ export function AboutSection({ isActive }: { isActive: boolean }) {
             </div>
           </div>
 
-          {/* Column Right: Open visual space for the video background with a single floating glass card */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="glass-light p-6 rounded-3xl border border-slate-200/50 shadow-xl max-w-[280px] animate-float-medium backdrop-blur-md">
-              <div className="flex justify-between items-center gap-6">
-                <div className="space-y-1">
-                  <p className="text-primary text-xs font-bold uppercase tracking-widest">Nutrición</p>
-                  <p className="text-2xl font-bold text-slate-800">100% Óptima</p>
-                </div>
-                <Heart className="w-8 h-8 text-primary animate-pulse" fill="currentColor" />
-              </div>
-            </div>
-          </div>
+          {/* Column Right: Open visual space for the video background */}
+          <div className="hidden lg:block"></div>
 
+        </div>
+      </div>
+
+      {/* Floating glass badge positioned absolutely flush in the bottom-right corner to cover the watermark */}
+      <div className="absolute bottom-0 right-0 z-20 glass-light px-10 py-8 rounded-tl-[3rem] border-t border-l border-white/40 shadow-2xl min-w-[320px] sm:min-w-[380px] backdrop-blur-md bg-white/85">
+        <div className="flex justify-between items-center gap-8">
+          <div className="space-y-1 text-left">
+            <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest">Nutrición</p>
+            <p className="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight leading-none">100% Óptima</p>
+          </div>
+          <Heart className="w-10 h-10 sm:w-12 sm:h-12 text-primary animate-pulse flex-shrink-0" fill="currentColor" />
         </div>
       </div>
     </section>
