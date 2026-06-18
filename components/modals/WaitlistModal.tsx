@@ -15,16 +15,33 @@ export function WaitlistModal({ isOpen, onClose, defaultType }: WaitlistModalPro
     const [email, setEmail] = useState("")
     const [status, setStatus] = useState<'IDLE' | 'LOADING' | 'SUCCESS'>('IDLE')
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         if (!email) return
 
         setStatus('LOADING')
-        setTimeout(() => {
-            setStatus('SUCCESS')
-            setName("")
-            setEmail("")
-        }, 1200)
+        try {
+            const response = await fetch("/api/waitlist", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ name, email, type: defaultType })
+            })
+
+            if (response.ok) {
+                setStatus('SUCCESS')
+                setName("")
+                setEmail("")
+            } else {
+                alert("Ocurrió un error al registrarte. Por favor intenta de nuevo.")
+                setStatus('IDLE')
+            }
+        } catch (err) {
+            console.error("Waitlist error:", err)
+            alert("Error de red. Por favor intenta de nuevo.")
+            setStatus('IDLE')
+        }
     }
 
     const handleClose = () => {
