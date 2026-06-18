@@ -17,15 +17,39 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "GluePets — Seguimiento nutricional para mascotas",
+  metadataBase: new URL('https://gluepets.click'),
+  title: {
+    default: "GluePets — Cuidado integral y nutrición para tu mascota",
+    template: "%s | GluePets"
+  },
   description:
-    "GluePets te ayuda a controlar la alimentación de tus mascotas, registrar comidas y establecer metas nutricionales personalizadas.",
-  generator: "v0.app",
+    "La App para el cuidado integral de tu mascota. Registra comidas, vacunas, eventos veterinarios y conéctate en tiempo real con tu clínica.",
+  generator: "Next.js",
+  alternates: {
+    canonical: 'https://gluepets.click',
+  },
   openGraph: {
-    title: "GluePets — Seguimiento nutricional para mascotas",
+    title: "GluePets — Cuidado integral y nutrición para tu mascota",
     description:
-      "GluePets te ayuda a controlar la alimentación de tus mascotas, registrar comidas y establecer metas nutricionales personalizadas.",
-    images: ["/img/GluePetsLogo.png"],
+      "Lleva el control de alimentación, peso, diario médico y conéctate con tu clínica veterinaria en tiempo real.",
+    url: 'https://gluepets.click',
+    siteName: 'GluePets',
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: '/img/GluePetsLogo.png',
+        width: 512,
+        height: 512,
+        alt: 'GluePets Logo',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "GluePets — Cuidado integral y nutrición para tu mascota",
+    description: "Lleva el control de alimentación, peso, diario médico y conéctate con tu clínica veterinaria en tiempo real.",
+    images: ['/img/GluePetsLogo.png'],
   },
   icons: {
     icon: "/img/GluePetsLogo.png",

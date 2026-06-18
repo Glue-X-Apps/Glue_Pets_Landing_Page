@@ -6,9 +6,12 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 
 export const metadata = {
-  title: "GluePets | La App para el Cuidado Integral de tu Mascota",
+  title: "La App para el Cuidado Integral de tu Mascota",
   description: "Lleva el control de vacunas, peso y nutrición de tu mascota. Conecta con tu veterinario y recibe recordatorios inteligentes. ¡Descarga gratis!",
-  keywords: ["app mascotas", "salud perros", "recordatorio vacunas", "nutrición mascotas"]
+  keywords: ["app mascotas", "salud perros", "recordatorio vacunas", "nutrición mascotas", "diario medico perro", "diario gato"],
+  alternates: {
+    canonical: "https://gluepets.click",
+  }
 }
 
 export default function GluePetsLanding() {
@@ -18,6 +21,8 @@ export default function GluePetsLanding() {
     name: 'GluePets',
     operatingSystem: 'ANDROID, IOS',
     applicationCategory: 'HealthApplication',
+    url: 'https://gluepets.click',
+    description: 'Lleva el control de vacunas, peso y nutrición de tu mascota. Conecta con tu veterinario y recibe recordatorios inteligentes.',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.8',

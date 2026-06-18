@@ -6,9 +6,12 @@ import { FooterSection } from "@/components/sections";
 import { Header } from "@/components/Header";
 
 export const metadata = {
-    title: "GluePets Vet | Software de Gestión para Clínicas Veterinarias",
-    description: "Optimiza tu clínica con GluePets. Historias clínicas digitales, recetas electrónicas y conexión directa con la App de tus clientes. Moderniza tu veterinaria.",
-    keywords: ["software veterinario", "historia clínica digital", "gestión veterinaria", "receta digital veterinaria"]
+    title: "Software de Gestión para Clínicas Veterinarias",
+    description: "Optimiza tu clínica con GluePets Vet. Historias clínicas digitales, recetas electrónicas y conexión directa con la App de tus clientes. Moderniza tu veterinaria.",
+    keywords: ["software veterinario", "historia clínica digital", "gestión veterinaria", "receta digital veterinaria", "CRM veterinarias"],
+    alternates: {
+        canonical: "https://gluepets.click/veterinarias",
+    }
 }
 
 export default function VeterinariasPage() {
@@ -18,9 +21,11 @@ export default function VeterinariasPage() {
         name: 'GluePets Vet',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web',
+        url: 'https://gluepets.click/veterinarias',
+        description: 'Software de gestión clínica veterinaria y CRM con sincronización directa en tiempo real con la App móvil de los dueños.',
         offers: {
             '@type': 'Offer',
-            price: '29',
+            price: '29.00',
             priceCurrency: 'USD',
         },
     }
