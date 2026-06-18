@@ -7,6 +7,7 @@ import { WaitlistModal } from "./modals/WaitlistModal"
 export function HeroOwner() {
     const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
     const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false)
     const videoRef = useRef<HTMLVideoElement>(null)
 
     useEffect(() => {
@@ -46,9 +47,16 @@ export function HeroOwner() {
                         muted
                         playsInline
                         autoPlay
-                        className="w-full h-full object-cover opacity-90 pointer-events-none"
+                        preload="auto"
+                        onCanPlay={() => setIsVideoLoaded(true)}
+                        className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-90' : 'opacity-0'}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-l from-[#FAF8F5] via-[#FAF8F5]/96 lg:via-[#FAF8F5]/92 to-[#FAF8F5]/70 lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
+                    
+                    {/* Subtle loader overlay */}
+                    <div className={`absolute inset-0 flex items-center justify-center bg-[#FAF8F5] transition-opacity duration-700 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                        <div className="w-6 h-6 rounded-full border-2 border-primary/20 border-t-primary animate-spin"></div>
+                    </div>
                 </div>
 
                 <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
