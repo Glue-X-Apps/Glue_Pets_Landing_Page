@@ -7,9 +7,10 @@ import Link from "next/link"
 interface DownloadModalProps {
     isOpen: boolean
     onClose: () => void
+    onOpenWaitlist: () => void
 }
 
-export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
+export function DownloadModal({ isOpen, onClose, onOpenWaitlist }: DownloadModalProps) {
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
             <DialogContent className="sm:max-w-md bg-slate-950 border border-slate-800 text-white rounded-3xl p-8">
@@ -37,10 +38,10 @@ export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
                         </div>
                     </Link>
 
-                    {/* App Store Button - Disabled/Coming Soon */}
+                    {/* App Store Button - Active Waitlist */}
                     <button
-                        disabled
-                        className="flex items-center gap-4 w-full bg-slate-900 text-slate-500 p-4 rounded-xl border border-slate-800 cursor-not-allowed relative overflow-hidden"
+                        onClick={onOpenWaitlist}
+                        className="group flex items-center gap-4 w-full bg-slate-900 text-slate-300 p-4 rounded-xl border border-slate-800 hover:bg-slate-800 transition-all hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden"
                     >
                         <div className="w-10 h-10 flex items-center justify-center">
                             <Apple fill="currentColor" size={36} className="pb-1" />
@@ -51,8 +52,8 @@ export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
                         </div>
 
                         {/* 'Coming Soon' Badge */}
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-slate-800 px-3 py-1 rounded-full text-[10px] font-bold text-slate-300 border border-slate-700">
-                            Pronto
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/20 px-3 py-1 rounded-full text-[10px] font-bold text-primary border border-primary/30 group-hover:scale-105 transition-transform">
+                            Lista Espera
                         </div>
                     </button>
                 </div>

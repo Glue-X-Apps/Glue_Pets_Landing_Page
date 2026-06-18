@@ -29,28 +29,28 @@ export function FAQSection() {
         <section className="py-20 relative">
             <div className="container mx-auto px-6 max-w-3xl">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold mb-4">Preguntas Frecuentes</h2>
-                    <p className="text-slate-400">Resolvemos tus dudas sobre el cuidado inteligente.</p>
+                    <h2 className="text-3xl font-bold font-serif text-slate-900 mb-4">Preguntas Frecuentes</h2>
+                    <p className="text-slate-600 font-sans">Resolvemos tus dudas sobre el cuidado inteligente.</p>
                 </div>
 
                 <div className="space-y-4">
                     {FAQ_ITEMS.map((item, index) => (
                         <div
                             key={index}
-                            className={`border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-white/5' : 'hover:bg-white/5'}`}
+                            className={`border border-slate-200/50 bg-white/40 rounded-2xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-white/90 shadow-sm border-slate-200' : 'hover:bg-white/70'}`}
                         >
                             <button
                                 onClick={() => setOpenIndex(api => api === index ? null : index)}
                                 className="w-full flex items-center justify-between p-6 text-left"
                             >
-                                <span className="font-semibold text-lg">{item.question}</span>
-                                {openIndex === index ? <ChevronUp className="text-primary" /> : <ChevronDown className="text-slate-400" />}
+                                <span className="font-semibold text-lg text-slate-800">{item.question}</span>
+                                {openIndex === index ? <ChevronUp className="text-primary" /> : <ChevronDown className="text-slate-500" />}
                             </button>
 
                             <div
                                 className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
                             >
-                                <p className="text-slate-400 leading-relaxed text-sm">
+                                <p className="text-slate-600 leading-relaxed text-sm font-sans">
                                     {item.answer}
                                 </p>
                             </div>

@@ -3,7 +3,7 @@ import { B2BSection } from "@/components/sections/B2BSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { PlansSection } from "@/components/sections/PlansSection";
 import { FooterSection } from "@/components/sections";
-import { ViewToggle } from "@/components/ViewToggle";
+import { Header } from "@/components/Header";
 
 export const metadata = {
     title: "GluePets Vet | Software de Gestión para Clínicas Veterinarias",
@@ -26,18 +26,21 @@ export default function VeterinariasPage() {
     }
 
     return (
-        <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary transition-colors duration-700 font-sans">
+        <main className="min-h-screen bg-[#070C15] text-[#E2E8F0] noise-bg selection:bg-accent/20 selection:text-accent transition-colors duration-700 font-sans overflow-x-hidden relative">
+            {/* Clinical Premium Radial Glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-accent/8 to-transparent rounded-full blur-[120px] pointer-events-none z-0"></div>
+
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
             {/* Navigation will be updated later to be shared/context aware */}
-            <ViewToggle mode="VET" />
+            <Header mode="VET" />
 
-            <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 relative z-10">
                 <HeroVet />
-                <div className="bg-slate-900/50 backdrop-blur-sm rounded-t-[3rem] -mt-12 relative z-20 border-t border-white/5">
+                <div className="bg-[#070C15]/85 backdrop-blur-md rounded-t-[3rem] -mt-12 relative z-20 border-t border-[#182235] shadow-[0_-15px_30px_rgba(0,0,0,0.4)]">
                     <B2BSection isActive={true} />
                     <FeaturesSection isActive={true} />
                     <PlansSection />

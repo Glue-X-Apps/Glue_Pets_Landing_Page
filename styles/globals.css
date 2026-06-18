@@ -35,9 +35,9 @@ body {
   --muted: oklch(0.25 0.05 260);
   --muted-foreground: oklch(0.7 0.05 260);
 
-  /* Accent: Friendly Cyan/Teal */
-  --accent: oklch(0.75 0.15 190);
-  --accent-foreground: oklch(0.1 0.05 190);
+  /* Accent: Professional Veterinary Electric Cyan */
+  --accent: oklch(0.74 0.17 195);
+  --accent-foreground: oklch(0.08 0.05 195);
 
   --destructive: oklch(0.65 0.2 25);
   --destructive-foreground: oklch(1 0 0);
@@ -98,17 +98,28 @@ body {
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-delayed: float 6s ease-in-out 3s infinite;
+  --animate-float-slow: float-slow 10s ease-in-out infinite;
+  --animate-float-medium: float-medium 7s ease-in-out infinite;
+  --animate-float-fast: float-fast 4.5s ease-in-out infinite;
 
   @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
 
-    0%,
-    100% {
-      transform: translateY(0);
-    }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1deg); }
+  }
 
-    50% {
-      transform: translateY(-20px);
-    }
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(-0.5deg); }
+  }
+
+  @keyframes float-fast {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(0.3deg); }
   }
 }
 

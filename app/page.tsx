@@ -1,4 +1,4 @@
-import { ViewToggle } from "@/components/ViewToggle";
+import { Header } from "@/components/Header";
 import { HeroOwner } from "@/components/HeroOwner";
 import { FooterSection } from "@/components/sections";
 import { B2CSection } from "@/components/sections/B2CSection";
@@ -31,20 +31,20 @@ export default function GluePetsLanding() {
   }
 
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary transition-colors duration-700 font-sans">
+    <main className="min-h-screen bg-[#FAF8F5] text-slate-900 noise-bg selection:bg-primary/20 selection:text-slate-800 transition-colors duration-700 font-sans">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <ViewToggle mode="OWNER" />
+      <Header mode="OWNER" />
 
       <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
         <HeroOwner />
-        <div className="bg-slate-900/50 backdrop-blur-sm rounded-t-[3rem] -mt-12 relative z-20 border-t border-white/5">
+        <div className="bg-[#FAF8F5]/80 backdrop-blur-sm rounded-t-[3rem] -mt-12 relative z-20 border-t border-slate-200/50 shadow-[0_-15px_30px_rgba(0,0,0,0.02)]">
           <B2CSection isActive={true} />
-          <FAQSection />
           <AboutSection isActive={true} />
+          <FAQSection />
         </div>
       </div>
 

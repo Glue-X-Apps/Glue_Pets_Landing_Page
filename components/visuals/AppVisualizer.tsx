@@ -128,7 +128,7 @@ function NutritionView() {
                         <Check size={14} className="text-green-600" strokeWidth={3} />
                     </div>
                     <div className="flex-1">
-                        <div className="text-xs font-bold text-slate-800 line-through decoration-slate-400 decoration-2">Desayuno</div>
+                        <div className="text-xs font-bold text-slate-800 line-through decoration-slate-400 decoration-2">Comida #1</div>
                         <div className="text-[10px] text-slate-500">400 kcal • 8:00 AM</div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@ function NutritionView() {
                         <Utensils size={14} className="text-orange-600" />
                     </div>
                     <div className="flex-1">
-                        <div className="text-xs font-bold text-slate-800">Cena</div>
+                        <div className="text-xs font-bold text-slate-800">Comida #2</div>
                         <div className="text-[10px] text-slate-500">400 kcal • 7:00 PM</div>
                     </div>
                 </div>
