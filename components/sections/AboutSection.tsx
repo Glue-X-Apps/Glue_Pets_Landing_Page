@@ -1,8 +1,37 @@
 "use client"
 
+import React, { useRef, useEffect } from "react";
 import { Heart, Utensils, Syringe, Scale } from "lucide-react";
 
 export function AboutSection({ isActive }: { isActive: boolean }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleLoadedMetadata = () => {
+      video.currentTime = 2;
+    };
+
+    const handleEnded = () => {
+      video.currentTime = 2;
+      video.play().catch(err => console.log("Video playback error:", err));
+    };
+
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    video.addEventListener("ended", handleEnded);
+
+    if (video.readyState >= 1) {
+      video.currentTime = 2;
+    }
+
+    return () => {
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   const points = [
     { icon: Utensils, title: "Diario de Comidas", desc: "Registra alimentos para cargarlos luego en tus Comida #1, Comida #2..." },
     { icon: Scale, title: "Mascotas Personalizadas", desc: "Elige entre avatares SVG oficiales o sube la foto real de tu mascota." },
@@ -31,18 +60,20 @@ export function AboutSection({ isActive }: { isActive: boolean }) {
                   </div>
                 </div>
 
-                <div className="grid gap-4">
-                  {[
-                    { title: "Desayuno", time: "8:00 AM", color: "bg-orange-400" },
-                    { title: "Paseo Matutino", time: "9:30 AM", color: "bg-blue-400" },
-                    { title: "Cena", time: "7:00 PM", color: "bg-purple-400" }
-                  ].map((item, idx) => (
-                    <div key={idx} className="bg-white/60 p-4 rounded-2xl border border-slate-200/40 flex justify-between items-center shadow-sm transition-transform hover:translate-x-2">
-                      <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
-                      <div className="flex-1 px-4 text-sm font-bold text-slate-800">{item.title}</div>
-                      <div className="text-slate-400 text-xs font-semibold">{item.time}</div>
-                    </div>
-                  ))}
+                <div className="relative rounded-3xl overflow-hidden aspect-[16/10] border border-slate-200/60 shadow-inner bg-slate-900 group-hover:scale-[1.01] transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent z-10 pointer-events-none"></div>
+                  <video
+                    ref={videoRef}
+                    src="/media/A_beautiful_cat_walking_gracef.mp4"
+                    muted
+                    playsInline
+                    autoPlay
+                    className="w-full h-full object-cover pointer-events-none"
+                  />
+                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl text-[10px] font-bold text-slate-800 border border-slate-200/50 shadow-sm z-20 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    Monitoreo Diario
+                  </div>
                 </div>
               </div>
             </div>
