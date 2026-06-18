@@ -1,22 +1,55 @@
 "use client"
 
-import { useState } from "react"
-import Image from "next/image"
-import { Play } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
 import { DownloadModal } from "./modals/DownloadModal"
-import { Hover3DContainer } from "./visuals/Hover3DContainer"
 import { WaitlistModal } from "./modals/WaitlistModal"
 
 export function HeroOwner() {
     const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
     const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
+    const videoRef = useRef<HTMLVideoElement>(null)
+
+    useEffect(() => {
+        const video = videoRef.current
+        if (!video) return
+
+        const handleLoadedMetadata = () => {
+            video.currentTime = 2
+        }
+
+        const handleEnded = () => {
+            video.currentTime = 2
+            video.play().catch(err => console.log("Video playback error:", err))
+        }
+
+        video.addEventListener("loadedmetadata", handleLoadedMetadata)
+        video.addEventListener("ended", handleEnded)
+
+        if (video.readyState >= 1) {
+            video.currentTime = 2
+        }
+
+        return () => {
+            video.removeEventListener("loadedmetadata", handleLoadedMetadata)
+            video.removeEventListener("ended", handleEnded)
+        }
+    }, [])
 
     return (
         <>
             <section className="min-h-screen w-full flex items-center justify-center pt-24 pb-12 relative overflow-hidden">
-                {/* Background blobs */}
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4 pointer-events-none"></div>
+                {/* Video Background with Readability Mask */}
+                <div className="absolute inset-0 z-0">
+                    <video
+                        ref={videoRef}
+                        src="/media/A_beautiful_Golden_Retriever_d.mp4"
+                        muted
+                        playsInline
+                        autoPlay
+                        className="w-full h-full object-cover opacity-90 pointer-events-none"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#FAF8F5] via-[#FAF8F5]/96 lg:via-[#FAF8F5]/92 to-[#FAF8F5]/70 lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
+                </div>
 
                 <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
                     <div className="space-y-8 text-center lg:text-left">
@@ -44,47 +77,8 @@ export function HeroOwner() {
                         </div>
                     </div>
 
-                    <div className="relative lg:h-[800px] flex items-center justify-center">
-                        <Hover3DContainer>
-                            <div className="relative w-[340px] lg:w-[400px] aspect-[4/5] p-4">
-                                <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-[3rem] border border-slate-200/50 backdrop-blur-sm shadow-inner"></div>
-                                <Image
-                                    src="/img/hero-gluepets-optimized.png"
-                                    alt="GluePets App Interface"
-                                    width={600}
-                                    height={800}
-                                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] max-w-none drop-shadow-2xl z-10"
-                                    priority
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                                />
-
-                                {/* Floating Cards - Premium Glassmorphism */}
-                                <div className="absolute top-20 -right-8 glass-light p-4 rounded-2xl animate-float z-20 border border-white/60">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-sm">
-                                            ✓
-                                        </div>
-                                        <div>
-                                            <p className="text-xs text-slate-500 font-semibold">Vacuna</p>
-                                            <p className="font-bold text-sm text-slate-800">Al día</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="absolute bottom-32 -left-8 glass-light p-4 rounded-2xl animate-float delay-1000 z-20 border border-white/60">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-sm">
-                                            ⚖️
-                                        </div>
-                                        <div>
-                                            <p className="text-xs text-slate-500 font-semibold">Peso</p>
-                                            <p className="font-bold text-sm text-slate-800">Controlado</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Hover3DContainer>
-                    </div>
+                    {/* Column Right: Open visual space for the video background */}
+                    <div className="hidden lg:block"></div>
                 </div>
             </section>
 
