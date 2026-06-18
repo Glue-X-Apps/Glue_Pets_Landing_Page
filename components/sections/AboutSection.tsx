@@ -55,6 +55,9 @@ export function AboutSection({ isActive }: { isActive: boolean }) {
           className="w-full h-full object-cover opacity-90 pointer-events-none"
         />
         <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#FAF8F5] via-[#FAF8F5]/96 lg:via-[#FAF8F5]/92 to-[#FAF8F5]/70 lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
+        
+        {/* Blur patch to hide watermark in the bottom-right corner */}
+        <div className="absolute bottom-0 right-0 w-44 h-16 bg-gradient-to-br from-transparent via-[#FAF8F5]/25 to-[#FAF8F5] backdrop-blur-md z-15 pointer-events-none"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-20">
