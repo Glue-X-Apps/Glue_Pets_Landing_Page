@@ -50,7 +50,7 @@ export function HeroVet() {
                         onCanPlay={() => setIsVideoLoaded(true)}
                         className={`w-full aspect-video lg:aspect-none lg:w-full lg:h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-85' : 'opacity-0'}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent via-[#070C15]/30 lg:via-[#070C15]/15 to-[#070C15] lg:to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent via-[#070C15]/30 lg:via-[#070C15]/15 to-[#070C15] lg:from-[#070C15] lg:to-transparent z-10 pointer-events-none"></div>
                     
                     {/* Subtle loader overlay */}
                     <div className={`absolute inset-0 flex items-center justify-center bg-[#070C15] transition-opacity duration-700 pointer-events-none ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>

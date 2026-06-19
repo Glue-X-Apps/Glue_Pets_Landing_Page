@@ -57,7 +57,7 @@ export function AboutSection({ isActive }: { isActive: boolean }) {
           onCanPlay={() => setIsVideoLoaded(true)}
           className={`w-full aspect-video lg:aspect-none lg:w-full lg:h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-90' : 'opacity-0'}`}
         />
-        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent via-[#FAF8F5]/30 lg:via-[#FAF8F5]/92 to-[#FAF8F5] lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent via-[#FAF8F5]/30 lg:via-[#FAF8F5]/92 to-[#FAF8F5] lg:from-[#FAF8F5] lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
         
         {/* Subtle loader overlay */}
         <div className={`absolute inset-0 flex items-center justify-center bg-[#FAF8F5] transition-opacity duration-700 pointer-events-none ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>

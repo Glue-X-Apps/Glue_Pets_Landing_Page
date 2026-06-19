@@ -59,7 +59,7 @@ export function FeaturesSection({ isActive }: { isActive: boolean }) {
           className={`w-full aspect-video lg:aspect-none lg:w-full lg:h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-65' : 'opacity-0'}`}
         />
         {/* Readability mask gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#070C15]/40 to-[#070C15] z-10 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent lg:from-[#070C15] via-[#070C15]/40 to-[#070C15] z-10 pointer-events-none"></div>
         
         {/* Subtle loader overlay */}
         <div className={`absolute inset-0 flex items-center justify-center bg-[#070C15] transition-opacity duration-700 pointer-events-none ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
