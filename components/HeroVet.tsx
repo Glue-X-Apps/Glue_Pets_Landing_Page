@@ -118,7 +118,7 @@ export function HeroVet() {
                 </div>
 
                 {/* Floating glass badge positioned absolutely flush in the bottom-right corner to cover the watermark */}
-                <div className="absolute bottom-0 right-0 z-20 bg-[#0C1527]/90 border-t border-l border-slate-800/80 px-10 py-12 sm:py-16 rounded-tl-[3.5rem] shadow-2xl min-w-[320px] sm:min-w-[380px] backdrop-blur-md">
+                <div className="hidden lg:block absolute bottom-0 right-0 z-20 bg-[#0C1527]/90 border-t border-l border-slate-800/80 px-10 py-12 sm:py-16 rounded-tl-[3.5rem] shadow-2xl min-w-[320px] sm:min-w-[380px] backdrop-blur-md">
                     <div className="flex justify-between items-center gap-8">
                         <div className="space-y-1 text-left">
                             <p className="text-accent text-xs sm:text-sm font-bold uppercase tracking-widest">Sincronización</p>

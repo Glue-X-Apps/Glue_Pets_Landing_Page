@@ -99,7 +99,7 @@ export function AboutSection({ isActive }: { isActive: boolean }) {
       </div>
 
       {/* Floating glass badge positioned absolutely flush in the bottom-right corner to cover the watermark */}
-      <div className="absolute bottom-0 right-0 z-20 glass-light px-10 py-12 sm:py-16 rounded-tl-[3.5rem] border-t border-l border-white/40 shadow-2xl min-w-[320px] sm:min-w-[380px] backdrop-blur-md bg-white/85">
+      <div className="hidden lg:block absolute bottom-0 right-0 z-20 glass-light px-10 py-12 sm:py-16 rounded-tl-[3.5rem] border-t border-l border-white/40 shadow-2xl min-w-[320px] sm:min-w-[380px] backdrop-blur-md bg-white/85">
         <div className="flex justify-between items-center gap-8">
           <div className="space-y-1 text-left">
             <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest">Nutrición</p>
