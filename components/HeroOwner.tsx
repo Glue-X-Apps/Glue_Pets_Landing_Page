@@ -40,7 +40,7 @@ export function HeroOwner() {
         <>
             <section className="min-h-screen w-full flex items-center justify-center pt-24 pb-12 relative overflow-hidden">
                 {/* Video Background with Readability Mask */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-x-0 top-20 lg:inset-0 z-0">
                     <video
                         ref={videoRef}
                         src="/media/A_beautiful_Golden_Retriever_d.mp4"
@@ -49,18 +49,18 @@ export function HeroOwner() {
                         autoPlay
                         preload="auto"
                         onCanPlay={() => setIsVideoLoaded(true)}
-                        className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-90' : 'opacity-0'}`}
+                        className={`w-full aspect-video lg:aspect-none lg:w-full lg:h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-90' : 'opacity-0'}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-l from-[#FAF8F5] via-[#FAF8F5]/96 lg:via-[#FAF8F5]/92 to-[#FAF8F5]/70 lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-l from-transparent via-[#FAF8F5]/30 lg:via-[#FAF8F5]/92 to-[#FAF8F5] lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
                     
                     {/* Subtle loader overlay */}
-                    <div className={`absolute inset-0 flex items-center justify-center bg-[#FAF8F5] transition-opacity duration-700 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                    <div className={`absolute inset-0 flex items-center justify-center bg-[#FAF8F5] transition-opacity duration-700 pointer-events-none ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
                         <div className="w-6 h-6 rounded-full border-2 border-primary/20 border-t-primary animate-spin"></div>
                     </div>
                 </div>
 
                 <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                    {/* Column Left: Open visual space for the video background */}
+                    {/* Column Left: Open visual space for desktop */}
                     <div className="hidden lg:block"></div>
 
                     <div className="space-y-8 text-center lg:text-left lg:pl-12">

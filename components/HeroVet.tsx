@@ -39,7 +39,7 @@ export function HeroVet() {
         <>
             <section className="min-h-screen w-full flex items-center justify-center pt-24 pb-12 relative overflow-hidden bg-slate-950">
                 {/* Video Background with Readability Mask */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-x-0 top-20 lg:inset-0 z-0">
                     <video
                         ref={videoRef}
                         src="/media/A_beautiful_black_tabby_cat_si.mp4"
@@ -48,12 +48,12 @@ export function HeroVet() {
                         autoPlay
                         preload="auto"
                         onCanPlay={() => setIsVideoLoaded(true)}
-                        className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-85' : 'opacity-0'}`}
+                        className={`w-full aspect-video lg:aspect-none lg:w-full lg:h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-85' : 'opacity-0'}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#070C15] via-[#070C15]/45 lg:via-[#070C15]/15 to-[#070C15]/20 lg:to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent via-[#070C15]/30 lg:via-[#070C15]/15 to-[#070C15] lg:to-transparent z-10 pointer-events-none"></div>
                     
                     {/* Subtle loader overlay */}
-                    <div className={`absolute inset-0 flex items-center justify-center bg-[#070C15] transition-opacity duration-700 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                    <div className={`absolute inset-0 flex items-center justify-center bg-[#070C15] transition-opacity duration-700 pointer-events-none ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
                         <div className="w-6 h-6 rounded-full border-2 border-accent/20 border-t-accent animate-spin"></div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ export function HeroVet() {
                         </div>
                     </div>
 
-                    {/* Column Right: Open visual space for the video background */}
+                    {/* Column Right: Open visual space for desktop */}
                     <div className="hidden lg:block"></div>
                 </div>
 

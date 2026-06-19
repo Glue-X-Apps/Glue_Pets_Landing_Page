@@ -46,7 +46,7 @@ export function AboutSection({ isActive }: { isActive: boolean }) {
       className={`min-h-screen w-full flex items-center justify-center py-20 transition-all duration-1000 ${isActive ? 'opacity-100' : 'opacity-0'} relative overflow-hidden`}
     >
       {/* Video Background with Readability Mask */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-x-0 top-0 lg:inset-0 z-0">
         <video
           ref={videoRef}
           src="/media/A_beautiful_cat_walking_gracef.mp4"
@@ -55,19 +55,19 @@ export function AboutSection({ isActive }: { isActive: boolean }) {
           autoPlay
           preload="auto"
           onCanPlay={() => setIsVideoLoaded(true)}
-          className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-90' : 'opacity-0'}`}
+          className={`w-full aspect-video lg:aspect-none lg:w-full lg:h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-90' : 'opacity-0'}`}
         />
-        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#FAF8F5] via-[#FAF8F5]/96 lg:via-[#FAF8F5]/92 to-[#FAF8F5]/70 lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent via-[#FAF8F5]/30 lg:via-[#FAF8F5]/92 to-[#FAF8F5] lg:to-[#FAF8F5]/35 z-10 pointer-events-none"></div>
         
         {/* Subtle loader overlay */}
-        <div className={`absolute inset-0 flex items-center justify-center bg-[#FAF8F5] transition-opacity duration-700 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`absolute inset-0 flex items-center justify-center bg-[#FAF8F5] transition-opacity duration-700 pointer-events-none ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
           <div className="w-6 h-6 rounded-full border-2 border-primary/20 border-t-primary animate-spin"></div>
         </div>
       </div>
 
       <div className="container mx-auto px-6 relative z-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Column Left: Text & Features (Readability Mask makes this extremely crisp) */}
           <div className="space-y-8">
             <div className="space-y-4">
@@ -92,7 +92,7 @@ export function AboutSection({ isActive }: { isActive: boolean }) {
             </div>
           </div>
 
-          {/* Column Right: Open visual space for the video background */}
+          {/* Column Right: Open visual space for desktop */}
           <div className="hidden lg:block"></div>
 
         </div>

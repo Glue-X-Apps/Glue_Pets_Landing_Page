@@ -47,7 +47,7 @@ export function FeaturesSection({ isActive }: { isActive: boolean }) {
       className={`min-h-screen w-full flex items-center justify-center py-32 relative overflow-hidden transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       {/* Video Background with Readability Mask */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-x-0 top-0 lg:inset-0 z-0">
         <video
           ref={videoRef}
           src="/media/A_beautiful_long_haired_Dachsh (1).mp4"
@@ -56,19 +56,20 @@ export function FeaturesSection({ isActive }: { isActive: boolean }) {
           autoPlay
           preload="auto"
           onCanPlay={() => setIsVideoLoaded(true)}
-          className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-65' : 'opacity-0'}`}
+          className={`w-full aspect-video lg:aspect-none lg:w-full lg:h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-65' : 'opacity-0'}`}
         />
         {/* Readability mask gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070C15] via-[#070C15]/40 to-[#070C15] z-10 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#070C15]/40 to-[#070C15] z-10 pointer-events-none"></div>
         
         {/* Subtle loader overlay */}
-        <div className={`absolute inset-0 flex items-center justify-center bg-[#070C15] transition-opacity duration-700 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`absolute inset-0 flex items-center justify-center bg-[#070C15] transition-opacity duration-700 pointer-events-none ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
           <div className="w-6 h-6 rounded-full border-2 border-accent/20 border-t-accent animate-spin"></div>
         </div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-24 space-y-4">
+
+        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">Potencia tu <span className="text-gradient">clínica veterinaria</span></h2>
           <p className="text-slate-400 text-lg">
             Herramientas diseñadas para reducir la carga administrativa y aumentar la fidelización de tus pacientes.
