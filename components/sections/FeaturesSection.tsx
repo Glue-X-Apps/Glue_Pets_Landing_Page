@@ -50,16 +50,16 @@ export function FeaturesSection({ isActive }: { isActive: boolean }) {
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          src="/media/A_beautiful_long_haired_Dachsh.mp4"
+          src="/media/A_beautiful_long_haired_Dachsh (1).mp4"
           muted
           playsInline
           autoPlay
           preload="auto"
           onCanPlay={() => setIsVideoLoaded(true)}
-          className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-35' : 'opacity-0'}`}
+          className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-65' : 'opacity-0'}`}
         />
         {/* Readability mask gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070C15] via-[#070C15]/75 to-[#070C15] z-10 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070C15] via-[#070C15]/40 to-[#070C15] z-10 pointer-events-none"></div>
         
         {/* Subtle loader overlay */}
         <div className={`absolute inset-0 flex items-center justify-center bg-[#070C15] transition-opacity duration-700 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
