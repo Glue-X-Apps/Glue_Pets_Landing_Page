@@ -21,9 +21,9 @@ export function FeaturesSection({ isActive }: { isActive: boolean }) {
     if (!video) return
 
     const handleTimeUpdate = () => {
-      // Skip second 5 (omit from 4s to 6s)
-      if (video.currentTime >= 4 && video.currentTime < 6) {
-        video.currentTime = 6
+      // Skip from second 3 to 7 (omit seconds 4, 5, 6)
+      if (video.currentTime >= 3 && video.currentTime < 7) {
+        video.currentTime = 7
       }
     }
 
