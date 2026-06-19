@@ -1,8 +1,12 @@
 "use client"
 
+import { useState, useRef, useEffect } from "react"
 import { Database, FileText, BarChart3, Users, Building2, Lock } from "lucide-react";
 
 export function FeaturesSection({ isActive }: { isActive: boolean }) {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
   const features = [
     { icon: Database, title: "Base de Datos Unificada", desc: "Historial médico accesible desde cualquier sucursal." },
     { icon: FileText, title: "Recetas Inteligentes", desc: "Calcula dosis y envía prescripciones directo a la App del dueño." },
@@ -12,15 +16,61 @@ export function FeaturesSection({ isActive }: { isActive: boolean }) {
     { icon: Lock, title: "Seguridad de Datos", desc: "Validación manual de profesionales. Sin intrusismo." }
   ]
 
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleTimeUpdate = () => {
+      // Skip second 5 (omit from 4s to 6s)
+      if (video.currentTime >= 4 && video.currentTime < 6) {
+        video.currentTime = 6
+      }
+    }
+
+    const handleEnded = () => {
+      video.currentTime = 0
+      video.play().catch(err => console.log("Video playback error:", err))
+    }
+
+    video.addEventListener("timeupdate", handleTimeUpdate)
+    video.addEventListener("ended", handleEnded)
+
+    return () => {
+      video.removeEventListener("timeupdate", handleTimeUpdate)
+      video.removeEventListener("ended", handleEnded)
+    }
+  }, [])
+
   return (
     <section
       id="features"
-      className={`min-h-screen w-full flex items-center justify-center py-32 transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      className={`min-h-screen w-full flex items-center justify-center py-32 relative overflow-hidden transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
-      <div className="container mx-auto px-6">
+      {/* Video Background with Readability Mask */}
+      <div className="absolute inset-0 z-0">
+        <video
+          ref={videoRef}
+          src="/media/A_beautiful_long_haired_Dachsh.mp4"
+          muted
+          playsInline
+          autoPlay
+          preload="auto"
+          onCanPlay={() => setIsVideoLoaded(true)}
+          className={`w-full h-full object-cover transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? 'opacity-35' : 'opacity-0'}`}
+        />
+        {/* Readability mask gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070C15] via-[#070C15]/75 to-[#070C15] z-10 pointer-events-none"></div>
+        
+        {/* Subtle loader overlay */}
+        <div className={`absolute inset-0 flex items-center justify-center bg-[#070C15] transition-opacity duration-700 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+          <div className="w-6 h-6 rounded-full border-2 border-accent/20 border-t-accent animate-spin"></div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-24 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Potencia tu <span className="text-gradient">clínica veterinaria</span></h2>
-          <p className="text-muted-foreground text-lg">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">Potencia tu <span className="text-gradient">clínica veterinaria</span></h2>
+          <p className="text-slate-400 text-lg">
             Herramientas diseñadas para reducir la carga administrativa y aumentar la fidelización de tus pacientes.
           </p>
         </div>
