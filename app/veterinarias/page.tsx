@@ -45,7 +45,7 @@ export default function VeterinariasPage() {
 
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 relative z-10">
                 <HeroVet />
-                <div className="bg-[#070C15]/85 backdrop-blur-md rounded-t-[3rem] -mt-12 relative z-20 border-t border-[#182235] shadow-[0_-15px_30px_rgba(0,0,0,0.4)]">
+                <div className="bg-[#070C15]/85 backdrop-blur-md rounded-t-[3rem] lg:rounded-t-none -mt-12 lg:mt-0 relative z-20 border-t border-[#182235] lg:border-t-0 shadow-[0_-15px_30px_rgba(0,0,0,0.4)] lg:shadow-none">
                     <B2BSection isActive={true} />
                     <FeaturesSection isActive={true} />
                     <PlansSection />
