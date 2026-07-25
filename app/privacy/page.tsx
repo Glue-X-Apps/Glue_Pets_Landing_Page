@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Política de Privacidad | GluePets",
-  description: "Política de Privacidad de GluePets (aplicación móvil y servicios asociados).",
+  description: "Política de Privacidad de la plataforma y aplicación móvil GluePets.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -8,69 +8,50 @@ export default function PrivacyPolicyPage() {
     <main className="h-[100dvh] w-full overflow-y-auto bg-slate-950 text-slate-100">
       <section className="container mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-16 max-w-4xl">
         <h1 className="text-3xl sm:text-4xl font-bold mb-6">Política de Privacidad</h1>
-        <p className="text-slate-300 mb-2">Última actualización: 26 de octubre de 2025</p>
-        <p className="text-slate-300 mb-8">Válida para: Sitio web (landing), aplicación móvil GluePets y servicios backend asociados (MVP experimental).</p>
+        <p className="text-slate-300 mb-2">Última actualización: 25 de julio de 2026</p>
+        <p className="text-slate-300 mb-8">Válida para: Aplicación móvil GluePets, landing page y servicios backend asociados (Cumplimiento Ley 21.719 de Chile).</p>
 
         <div className="prose prose-invert max-w-none">
-          <h2>1. Quiénes somos</h2>
-          <p>GluePets es un <strong>proyecto personal en fase MVP</strong> orientado al cuidado nutricional de mascotas, desarrollado por un <strong>desarrollador independiente</strong> (en adelante, "GluePets", "nosotros"). Este documento está pensado para facilitar la lectura y comprensión del tratamiento de datos durante pruebas y validación del producto. Para consultas de privacidad, usa el correo de contacto indicado en la app o envía un email a <em>contact.gluepets.app@gmail.com</em>.</p>
+          <h2>1. Quiénes Somos y Responsable del Tratamiento</h2>
+          <p>GluePets opera como <strong>Responsable del Tratamiento</strong> (Data Controller) de los datos personales ingresados por los tutores registrados en la plataforma. Para cualquier consulta sobre la gestión de tus datos o el ejercicio de tus derechos, puedes escribir a nuestro Oficial de Privacidad a <em>contact.gluepets.app@gmail.com</em>.</p>
 
-          <h2>2. Ámbito de esta política</h2>
-          <p>Esta política describe cómo recopilamos, usamos, compartimos y protegemos datos personales cuando usas la app móvil GluePets, la landing page y nuestras APIs/servicios backend. Si no aceptas esta política, no uses los servicios. Al tratarse de un MVP, algunas funcionalidades pueden cambiar con rapidez; cualquier cambio relevante será reflejado en versiones futuras de esta política.</p>
-
-          <h2>3. Datos que tratamos</h2>
+          <h2>2. Datos que Recopilamos</h2>
           <ul>
-            <li><strong>Cuenta y autenticación</strong>: email, identificadores técnicos, tokens de sesión.</li>
-            <li><strong>Perfil de mascota</strong>: nombre, especie/raza, sexo, edad, peso.</li>
-            <li><strong>Diario y nutrición</strong>: comidas registradas, cantidades/porciones, horarios, objetivos y progreso de peso.</li>
-            <li><strong>Preferencias</strong>: idioma, tema (claro/oscuro), recordatorios locales.</li>
-            <li><strong>Datos técnicos</strong>: identificadores de dispositivo, sistema operativo, logs técnicos, IP aproximada, eventos en la app (telemetría de uso básico).</li>
-            <li><strong>Landing</strong>: cookies o tecnologías similares para métricas de uso (p.ej. analítica).</li>
+            <li><strong>Identidad y Cuenta</strong>: Nombre, correo electrónico, identificador único de cuenta (OAuth de Google/Apple). La captura del número de teléfono celular es opcional y solo requerida bajo perfilamiento progresivo.</li>
+            <li><strong>Perfil del Paciente/Mascota</strong>: Nombre, especie, raza, edad, sexo, peso y hábitos de nutrición.</li>
+            <li><strong>Trazabilidad de Consentimiento</strong>: Registro inmutable en nuestro <em>Consent Ledger</em> de las autorizaciones otorgadas por el usuario, con fecha, hora e identificador de versión del texto legal.</li>
+            <li><strong>Datos Técnicos</strong>: Identificadores de dispositivo, sistema operativo, IP aproximada y registros de seguridad.</li>
           </ul>
 
-          <h2>4. Finalidades del tratamiento</h2>
+          <h2>3. Bases de Licitud del Tratamiento</h2>
           <ul>
-            <li>Prestar las funcionalidades del servicio (registro de comidas, control de peso, recomendaciones básicas).</li>
-            <li>Personalizar la experiencia (idioma, tema) y habilitar recordatorios locales.</li>
-            <li>Mejorar el producto, resolver incidencias y mantener seguridad/estabilidad.</li>
-            <li>Analítica agregada y métricas de uso para priorizar mejoras (sin perfilarte con fines publicitarios).</li>
-            <li>Cumplimiento legal y atención de solicitudes de derechos.</li>
+            <li><strong>Consentimiento Expreso</strong>: Otorgado de forma libre, informada y granular por el titular para sincronización clínica, notificaciones o analítica.</li>
+            <li><strong>Ejecución del Servicio</strong>: Procesamiento estrictamente necesario para prestar las funciones de la app (registro de comidas, metas de peso).</li>
+            <li><strong>Cumplimiento Legal</strong>: Atención de requerimientos de la Agencia de Protección de Datos Personales (APDP) u organismos fiscalizadores.</li>
           </ul>
 
-          <h2>5. Bases legales</h2>
+          <h2>4. Derechos ARCO+ (Ley 21.719)</h2>
+          <p>Como titular de los datos, la Ley 21.719 te otorga los siguientes derechos irrenunciables:</p>
           <ul>
-            <li><strong>Ejecución de contrato</strong>: prestación del servicio solicitado por ti.</li>
-            <li><strong>Interés legítimo</strong>: seguridad, prevención de abusos, mejora del producto con analítica agregada.</li>
-            <li><strong>Consentimiento</strong>: cuando la ley lo requiera (p.ej., ciertas cookies/analítica en la web, notificaciones).</li>
+            <li><strong>Acceso</strong>: Solicitar información sobre qué datos personales tratamos.</li>
+            <li><strong>Rectificación</strong>: Corregir datos inexactos o desactualizados.</li>
+            <li><strong>Cancelación (Supresión / Derecho al Olvido)</strong>: Solicitar la eliminación física e irreversible de tu cuenta personal en B2C.</li>
+            <li><strong>Oposición</strong>: Oponerte al tratamiento de tus datos para finalidades específicas (ej. comunicaciones secundarias).</li>
+            <li><strong>Portabilidad</strong>: Solicitar la entrega de tus datos personales en formato estructurado e interoperable.</li>
           </ul>
+          <p>Para ejercer cualquiera de estos derechos, escribe a <em>contact.gluepets.app@gmail.com</em> o utiliza las funciones dedicadas en los ajustes de la aplicación móvil.</p>
 
-          <h2>6. Conservación</h2>
-          <p>Conservamos tus datos mientras mantengas una cuenta activa y por el tiempo necesario para cumplir finalidades y obligaciones legales. Puedes solicitar eliminación; borraremos o anonimizaremos salvo conservación exigida por ley o por legítimo interés (p.ej., seguridad, defensa ante reclamaciones).</p>
+          <h2>5. Supresión de Cuenta vs. Conservación Ficha Veterinaria</h2>
+          <p>Al solicitar la eliminación de tu cuenta en GluePets, ejecutaremos la <strong>eliminación física (Hard Delete)</strong> de tu identidad personal de nuestros servidores B2C. Si mantuviste atenciones médicas vinculadas con centros veterinarios autorizados, la ficha clínica de tu mascota permanecerá encapsulada de forma anonimizada en el sistema del centro veterinario (en estado de conservación legal / SAG), desvinculando de forma irreversible tus datos personales.</p>
 
-          <h2>7. Destinatarios y transferencias</h2>
-          <ul>
-            <li><strong>Proveedores</strong> (encargados de tratamiento): servicios de hosting y base de datos, analítica de uso del sitio/app (si corresponde) y sistemas de distribución de la app. Podremos actualizar estos proveedores cuando sea razonable, manteniendo medidas adecuadas de protección.</li>
-            <li><strong>Autoridades</strong> cuando sea requerido por ley o para proteger derechos.</li>
-          </ul>
-          <p>Tus datos pueden alojarse y tratarse fuera de tu país. Cuando apliquen, usamos mecanismos de transferencia adecuados (p.ej., Cláusulas Contractuales Tipo).</p>
+          <h2>6. Seguridad y Encriptación</h2>
+          <p>Aplicamos medidas técnicas avanzadas de seguridad, incluyendo cifrado en tránsito (TLS 1.3), cifrado en reposo (Envelope Encryption DEK/KEK) y registros de auditoría inmutables para resguardar la confidencialidad de la información.</p>
 
-          <h2>8. Seguridad</h2>
-          <p>Aplicamos medidas técnicas y organizativas razonables para proteger tus datos (p.ej., cifrado en tránsito, control de acceso, monitorización). Ningún sistema es 100% seguro; te recomendamos buenas prácticas (contraseñas robustas, mantener tu dispositivo actualizado). Dado el carácter <strong>MVP/Beta</strong> del servicio, podrían existir errores o pérdidas de datos; evita almacenar información crítica y conserva copias de respaldo.</p>
+          <h2>7. Modificaciones a la Política</h2>
+          <p>Toda modificación a esta política actualizará el <code>policyHashVersion</code> en nuestro sistema. Si realizamos cambios sustanciales, la aplicación te solicitará refrendar tu consentimiento antes de continuar utilizando el servicio.</p>
 
-          <h2>9. Tus derechos</h2>
-          <p>Según tu jurisdicción, puedes ejercer derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición. Para solicitarlo, escribe al correo de contacto indicado en la app o en el sitio (<em>contact.gluepets.app@gmail.com</em>). También puedes retirar consentimientos otorgados (p. ej., analítica o notificaciones) desde los ajustes.</p>
-
-          <h2>10. Menores</h2>
-          <p>GluePets está dirigida a adultos responsables del cuidado de mascotas. No recabamos conscientemente datos personales de menores de 13 años (o la edad mínima aplicable en tu país). Si crees que un menor nos proporcionó datos, contáctanos para eliminarlos.</p>
-
-          <h2>11. Cookies y tecnologías similares</h2>
-          <p>La landing puede usar cookies/SDKs para analítica básica y mejorar la experiencia. Donde la ley lo exija, te pediremos consentimiento o te ofreceremos controles para gestionarlas.</p>
-
-          <h2>12. Cambios a esta política</h2>
-          <p>Podemos actualizar esta política para reflejar cambios operativos o legales. Publicaremos la versión vigente y la fecha de “Última actualización”. Cambios sustanciales podrán notificarse adicionalmente en la app o por email.</p>
-
-          <h2>13. Contacto</h2>
-          <p>Para preguntas o solicitudes sobre privacidad, usa el correo de contacto indicado en la app o sitio (<em>contact.gluepets.app@gmail.com</em>).</p>
+          <h2>8. Contacto</h2>
+          <p>Consultas sobre privacidad y ejercicio ARCO+: <em>contact.gluepets.app@gmail.com</em></p>
         </div>
       </section>
     </main>
