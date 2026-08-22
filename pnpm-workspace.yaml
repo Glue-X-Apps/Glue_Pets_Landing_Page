@@ -1,7 +1,20 @@
 allowBuilds:
   sharp: true
+
 overrides:
-  "postcss": "^8.5.10"
-  "lodash": "^4.18.1"
-  "picomatch": "^4.0.1"
-  "flatted": "^3.4.2"
+  flatted: "^3.4.2"
+  lodash: "^4.18.1"
+  nanoid: "^3.3.18"
+  next: "^16.3.2"
+  picomatch: "^4.0.1"
+  postcss: "^8.5.23"
+  sharp: "^0.35.0"
+
+minimumReleaseAgeExclude:
+  - nanoid@3.3.16
+  - nanoid@3.3.18
+  - next@16.2.11
+  - next@16.3.2
+  - postcss@8.5.18
+  - postcss@8.5.23
+  - sharp@0.35.0
