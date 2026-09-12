@@ -93,7 +93,7 @@ export function HeroOwner() {
                                 className="inline-flex items-center justify-center gap-2 bg-white/90 hover:bg-white text-slate-800 border border-slate-200/80 px-8 py-4 rounded-full font-bold text-lg hover:-translate-y-1 transition-all shadow-md backdrop-blur-sm group"
                             >
                                 <Globe size={20} className="text-primary" />
-                                <span>Versión Web</span>
+                                <span>Abrir App Web</span>
                                 <span className="text-primary group-hover:translate-x-0.5 transition-transform">↗</span>
                             </a>
                         </div>

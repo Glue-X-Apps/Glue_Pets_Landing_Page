@@ -74,7 +74,7 @@ export function B2CSection({ isActive }: B2CSectionProps) {
                   className="inline-flex items-center justify-center gap-2 bg-white/90 hover:bg-white text-slate-800 border border-slate-200 px-8 py-3 rounded-full font-bold transition-all hover:bg-slate-50 shadow-sm"
                 >
                   <Globe size={18} className="text-primary" />
-                  <span>Versión Web</span>
+                  <span>Abrir App Web</span>
                   <span className="text-primary font-bold">↗</span>
                 </a>
               </div>

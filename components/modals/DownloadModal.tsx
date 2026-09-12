@@ -49,8 +49,8 @@ export function DownloadModal({ isOpen, onClose, onOpenWaitlist }: DownloadModal
                             <Globe size={32} />
                         </div>
                         <div className="flex flex-col items-start leading-none">
-                            <span className="text-[10px] font-bold uppercase tracking-wider opacity-60">En tu navegador</span>
-                            <span className="text-xl font-bold">Versión Web (PWA)</span>
+                            <span className="text-[10px] font-bold uppercase tracking-wider opacity-60">Sin instalar nada</span>
+                            <span className="text-xl font-bold">Abrir App Web</span>
                         </div>
 
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-green-500/10 px-3 py-1 rounded-full text-[10px] font-bold text-green-700 border border-green-500/20 group-hover:scale-105 transition-transform">

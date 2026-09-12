@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="prose prose-invert max-w-none">
           <h2>1. Quiénes Somos y Protección de Datos</h2>
-          <p>GluePets opera como responsable del tratamiento de los datos personales ingresados por los tutores registrados en la plataforma. Para cualquier consulta sobre la gestión de tus datos o el ejercicio de tus derechos, puedes escribir a nuestro equipo de privacidad a <em>contact.gluepets.app@gmail.com</em>.</p>
+          <p>GluePets opera como responsable del tratamiento de los datos personales ingresados por los tutores registrados en la plataforma. Para cualquier consulta sobre la gestión de tus datos o el ejercicio de tus derechos, puedes escribir a nuestro equipo de privacidad a <em>contacto@gluepets.cl</em>.</p>
 
           <h2>2. Datos que Recopilamos</h2>
           <ul>
