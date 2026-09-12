@@ -78,6 +78,17 @@ export function FooterSection({ isActive }: { isActive: boolean }) {
                   Para Veterinarias
                 </Link>
               </li>
+              <li>
+                <a
+                  href="https://app.gluepets.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors text-left flex items-center gap-1.5"
+                >
+                  <span>Versión Web App</span>
+                  <span className="text-[10px] bg-primary/20 text-primary px-1.5 py-0.5 rounded font-bold">PWA</span>
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -38,13 +38,13 @@ export default function TermsPage() {
           <p>Los Servicios se proporcionan “tal cual” y “según disponibilidad”. En la máxima medida permitida por la ley, la responsabilidad de GluePets por cualquier inconveniente derivado del uso del servicio se limita al importe pagado por el usuario en los doce (12) meses anteriores, o cero en caso de servicios gratuitos.</p>
 
           <h2>7. Eliminación de Cuenta</h2>
-          <p>Puedes solicitar la eliminación de tu cuenta en cualquier momento desde el menú de perfil en la aplicación móvil o escribiendo a <em>contact.gluepets.app@gmail.com</em>. La eliminación de tu perfil y datos personales se ejecutará de forma permanente conforme a nuestra Política de Privacidad.</p>
+          <p>Puedes solicitar la eliminación de tu cuenta en cualquier momento desde el menú de perfil en la aplicación móvil o escribiendo a <em>soporte@gluepets.cl</em>. La eliminación de tu perfil y datos personales se ejecutará de forma permanente conforme a nuestra Política de Privacidad.</p>
 
           <h2>8. Ley Aplicable</h2>
           <p>Estos Términos se rigen e interpretan conforme a las leyes aplicables y la legislación de protección al consumidor, garantizando siempre tus derechos como usuario.</p>
 
           <h2>9. Contacto</h2>
-          <p>Para cualquier consulta legal o de soporte: <em>contact.gluepets.app@gmail.com</em></p>
+          <p>Para cualquier consulta legal o de soporte: <em>contacto@gluepets.cl</em> | <em>soporte@gluepets.cl</em></p>
         </div>
       </section>
     </main>

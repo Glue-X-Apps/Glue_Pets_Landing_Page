@@ -1,7 +1,7 @@
 "use client"
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Apple, Play } from "lucide-react"
+import { Apple, Play, Globe } from "lucide-react"
 import Link from "next/link"
 
 interface DownloadModalProps {
@@ -37,6 +37,26 @@ export function DownloadModal({ isOpen, onClose, onOpenWaitlist }: DownloadModal
                             <span className="text-xl font-bold">Google Play</span>
                         </div>
                     </Link>
+
+                    {/* Web Version Button */}
+                    <a
+                        href="https://app.gluepets.cl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-4 w-full bg-white text-slate-800 p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition-all hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden shadow-sm"
+                    >
+                        <div className="w-10 h-10 flex items-center justify-center text-primary">
+                            <Globe size={32} />
+                        </div>
+                        <div className="flex flex-col items-start leading-none">
+                            <span className="text-[10px] font-bold uppercase tracking-wider opacity-60">En tu navegador</span>
+                            <span className="text-xl font-bold">Versión Web (PWA)</span>
+                        </div>
+
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-green-500/10 px-3 py-1 rounded-full text-[10px] font-bold text-green-700 border border-green-500/20 group-hover:scale-105 transition-transform">
+                            Online
+                        </div>
+                    </a>
 
                     {/* App Store Button - Active Waitlist */}
                     <button
