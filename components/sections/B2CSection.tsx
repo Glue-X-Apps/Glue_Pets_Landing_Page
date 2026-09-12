@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Smartphone, Utensils, QrCode } from "lucide-react"
+import { Smartphone, Utensils, QrCode, Globe } from "lucide-react"
 import { AppVisualizer } from "../visuals/AppVisualizer"
 import { DownloadModal } from "../modals/DownloadModal"
 import { Hover3DContainer } from "../visuals/Hover3DContainer"
@@ -67,6 +67,16 @@ export function B2CSection({ isActive }: B2CSectionProps) {
                 >
                   Descargar App
                 </button>
+                <a
+                  href="https://app.gluepets.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-white/90 hover:bg-white text-slate-800 border border-slate-200 px-8 py-3 rounded-full font-bold transition-all hover:bg-slate-50 shadow-sm"
+                >
+                  <Globe size={18} className="text-primary" />
+                  <span>Versión Web</span>
+                  <span className="text-primary font-bold">↗</span>
+                </a>
               </div>
             </div>
 

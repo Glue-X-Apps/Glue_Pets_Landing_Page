@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
             <li><strong>Oposición</strong>: Desactivar autorizaciones opcionales como notificaciones o analíticas en cualquier momento.</li>
             <li><strong>Portabilidad</strong>: Solicitar la entrega de tus datos registrados en un formato estándar.</li>
           </ul>
-          <p>Para ejercer cualquiera de estos derechos, escribe a <em>contact.gluepets.app@gmail.com</em> o utiliza las opciones en el menú de perfil de la aplicación móvil.</p>
+          <p>Para ejercer cualquiera de estos derechos, escribe a <em>contacto@gluepets.cl</em> o utiliza las opciones en el menú de perfil de la aplicación móvil.</p>
 
           <h2>5. Eliminación de Cuenta e Historial Médico</h2>
           <p>Al solicitar la eliminación de tu cuenta en GluePets, ejecutaremos la eliminación permanente e irreversible de tu perfil de nuestros servidores. Si utilizaste la aplicación en centros veterinarios vinculados, las atenciones clínicas se mantendrán anonimizadas en el centro médico conforme a la normativa de registros de salud animal, desvinculando por completo tus datos personales.</p>
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
           <p>Si realizamos cambios significativos en esta política, te informaremos a través de la aplicación móvil para que puedas revisar y confirmar tus preferencias antes de continuar utilizando el servicio.</p>
 
           <h2>8. Contacto</h2>
-          <p>Para consultas sobre privacidad o el ejercicio de tus derechos: <em>contact.gluepets.app@gmail.com</em></p>
+          <p>Para consultas sobre privacidad o el ejercicio de tus derechos: <em>contacto@gluepets.cl</em> | <em>soporte@gluepets.cl</em></p>
         </div>
       </section>
     </main>
