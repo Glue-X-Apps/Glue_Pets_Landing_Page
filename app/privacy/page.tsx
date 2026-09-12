@@ -1,6 +1,15 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Política de Privacidad | GluePets",
-  description: "Política de Privacidad de la plataforma y aplicación móvil GluePets.",
+  description: "Política de Privacidad de la plataforma y aplicación móvil GluePets conforme a la Ley 21.719.",
+  alternates: {
+    canonical: "https://gluepets.cl/privacy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function PrivacyPolicyPage() {

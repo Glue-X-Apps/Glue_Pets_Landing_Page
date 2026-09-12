@@ -16,7 +16,7 @@ export function FooterSection({ isActive }: { isActive: boolean }) {
           <div className="col-span-2 space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-primary/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/5">
-                <Image src="/img/GluePetsLogo.png" alt="Logo" width={28} height={28} />
+                <Image src="/img/GluePetsLogo.png" alt="GluePets Logo" width={28} height={28} />
               </div>
               <span className="text-2xl font-bold tracking-tight text-white">GluePets</span>
             </div>

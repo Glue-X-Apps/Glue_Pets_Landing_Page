@@ -57,7 +57,7 @@ export function PlatformVisualizer({ onInteract }: { onInteract?: () => void }) 
                     {/* Page Header */}
                     <div className="h-14 sm:h-16 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-4 sm:px-8 bg-white dark:bg-slate-900 flex-none">
                         <div>
-                            <h1 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">Pacientes</h1>
+                            <span className="block text-base sm:text-lg font-bold text-slate-900 dark:text-white">Pacientes</span>
                             <p className="text-[10px] sm:text-xs text-slate-500 hidden sm:block">Gestión de clientes y mascotas</p>
                         </div>
                         <button className="bg-primary text-white px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-primary/20 whitespace-nowrap">

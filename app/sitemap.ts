@@ -3,39 +3,39 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
-            url: 'https://gluepets.click',
+            url: 'https://gluepets.cl',
             lastModified: new Date(),
             changeFrequency: 'weekly',
-            priority: 1,
+            priority: 1.0,
         },
         {
-            url: 'https://gluepets.click/veterinarias',
+            url: 'https://gluepets.cl/veterinarias',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.9,
         },
         {
-            url: 'https://gluepets.click/privacy',
+            url: 'https://gluepets.cl/privacy',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
-            url: 'https://gluepets.click/terms',
+            url: 'https://gluepets.cl/terms',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
-            url: 'https://gluepets.click/account-deletion',
+            url: 'https://gluepets.cl/account-deletion',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.3,
+            changeFrequency: 'monthly',
+            priority: 0.4,
         },
         {
-            url: 'https://gluepets.click/subprocessors',
+            url: 'https://gluepets.cl/subprocessors',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 0.3,
         },
     ]

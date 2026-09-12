@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { HeroVet } from "@/components/HeroVet";
 import { B2BSection } from "@/components/sections/B2BSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
@@ -5,13 +6,35 @@ import { PlansSection } from "@/components/sections/PlansSection";
 import { FooterSection } from "@/components/sections";
 import { Header } from "@/components/Header";
 
-export const metadata = {
-    title: "Software de Gestión para Clínicas Veterinarias",
-    description: "Optimiza tu clínica con GluePets Vet. Historias clínicas digitales, recetas electrónicas y conexión directa con la App de tus clientes. Moderniza tu veterinaria.",
-    keywords: ["software veterinario", "historia clínica digital", "gestión veterinaria", "receta digital veterinaria", "CRM veterinarias"],
+export const metadata: Metadata = {
+    title: "Software de Gestión y CRM para Clínicas Veterinarias",
+    description: "Optimiza tu clínica con GluePets Vet. Historias clínicas digitales, recetas electrónicas y conexión directa en tiempo real con la App móvil de tus pacientes.",
+    keywords: ["software veterinario", "historia clínica digital", "gestión veterinaria", "receta digital veterinaria", "CRM veterinarias", "software clínico veterinario Chile", "fidelización veterinaria"],
     alternates: {
-        canonical: "https://gluepets.click/veterinarias",
-    }
+        canonical: "https://gluepets.cl/veterinarias",
+    },
+    openGraph: {
+        title: "GluePets Vet — Software de Gestión y CRM para Clínicas Veterinarias",
+        description: "Historias clínicas digitales, recetas electrónicas y conexión directa en tiempo real con la App móvil de tus pacientes.",
+        url: 'https://gluepets.cl/veterinarias',
+        siteName: 'GluePets Vet',
+        locale: 'es_CL',
+        type: 'website',
+        images: [
+            {
+                url: '/img/hero-gluepets-optimized.png',
+                width: 1200,
+                height: 630,
+                alt: 'GluePets Vet - Software de Gestión Clínica',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: "GluePets Vet — Software de Gestión para Clínicas Veterinarias",
+        description: "Historias clínicas digitales, recetas electrónicas y conexión directa en tiempo real con tus clientes.",
+        images: ['/img/hero-gluepets-optimized.png'],
+    },
 }
 
 export default function VeterinariasPage() {
@@ -21,8 +44,15 @@ export default function VeterinariasPage() {
         name: 'GluePets Vet',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web',
-        url: 'https://gluepets.click/veterinarias',
+        url: 'https://gluepets.cl/veterinarias',
         description: 'Software de gestión clínica veterinaria y CRM con sincronización directa en tiempo real con la App móvil de los dueños.',
+        featureList: [
+            'Historias Clínicas Digitales',
+            'Recetas Electrónicas y Dietas Veterinarias',
+            'Monitoreo Remoto de Peso y Condición Corporal (BCS)',
+            'Sincronización en Tiempo Real con Dueños',
+            'Portal Web de Gestión Clínica'
+        ],
         offers: {
             '@type': 'Offer',
             price: '29.00',

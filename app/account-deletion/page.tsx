@@ -2,7 +2,14 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Eliminación de Cuenta | GluePets',
-  description: 'Información sobre cómo eliminar tu cuenta y datos de GluePets',
+  description: 'Información y procedimiento para solicitar la eliminación de tu cuenta y datos personales de GluePets.',
+  alternates: {
+    canonical: 'https://gluepets.cl/account-deletion',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function AccountDeletionPage() {

@@ -4,10 +4,10 @@ export default function manifest(): MetadataRoute.Manifest {
     return {
         name: 'GluePets - Cuidado Integral de Mascotas',
         short_name: 'GluePets',
-        description: 'La App para el cuidado integral de tu mascota. Nutrición, salud y conexión veterinaria.',
+        description: 'La App para el cuidado integral de tu mascota. Nutrición científica, diario médico y conexión veterinaria.',
         start_url: '/',
         display: 'standalone',
-        background_color: '#ffffff',
+        background_color: '#FAF8F5',
         theme_color: '#4f46e5',
         icons: [
             {

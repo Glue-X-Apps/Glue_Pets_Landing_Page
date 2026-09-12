@@ -1,6 +1,15 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Subprocesadores | GluePets",
-  description: "Listado transparente de subprocesadores y proveedores de GluePets (MVP).",
+  description: "Listado transparente de subprocesadores y proveedores de infraestructura de GluePets.",
+  alternates: {
+    canonical: "https://gluepets.cl/subprocessors",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function SubprocessorsPage() {

@@ -1,6 +1,15 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Términos y Condiciones | GluePets",
-  description: "Términos de uso del sitio y de la aplicación GluePets.",
+  description: "Términos y condiciones de uso de la plataforma y aplicación móvil GluePets.",
+  alternates: {
+    canonical: "https://gluepets.cl/terms",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function TermsPage() {
