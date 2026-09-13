@@ -1,6 +1,6 @@
 # GluePets Landing Page
 
-Una landing page moderna y escalable para la aplicación GluePets, construida con Next.js 16, TypeScript y Tailwind CSS.
+Una landing page moderna y escalable para la aplicación GluePets, construida con Next.js 16, TypeScript y Tailwind CSS .
 
 ## 🏗️ Arquitectura del Proyecto
 
