@@ -1,8 +1,6 @@
 "use client"
 
-import { useState } from "react"
 import { Check, X } from "lucide-react";
-import { WaitlistModal } from "../modals/WaitlistModal";
 
 const PLANS = [
     {
@@ -38,8 +36,6 @@ const PLANS = [
 ];
 
 export function PlansSection() {
-    const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
-
     return (
         <>
             <section id="plans" className="py-32 relative">
@@ -87,8 +83,8 @@ export function PlansSection() {
                                     ))}
                                 </ul>
 
-                                <button
-                                    onClick={() => setIsWaitlistOpen(true)}
+                                <a
+                                    href={`mailto:contacto@gluepets.cl?subject=${encodeURIComponent("Consulta sobre " + plan.name + " - GluePets Vet")}`}
                                     className={`w-full py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group cursor-pointer border
                                         ${plan.popular 
                                             ? 'bg-accent text-slate-950 hover:bg-accent/90 border-accent/20 hover:border-accent/40 shadow-lg shadow-accent/15' 
@@ -97,19 +93,13 @@ export function PlansSection() {
                                     `}
                                 >
                                     <span>{plan.price === "0" ? "Empezar Gratis" : "Elegir Premium"}</span>
-                                    <span className="bg-primary/20 text-primary group-hover:scale-105 transition-transform text-[9px] px-1.5 py-0.5 rounded border border-primary/30 uppercase tracking-wider font-semibold">Beta</span>
-                                </button>
+                                    <span className="bg-primary/20 text-primary group-hover:scale-105 transition-transform text-[9px] px-1.5 py-0.5 rounded border border-primary/30 uppercase tracking-wider font-semibold">Contacto</span>
+                                </a>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
-
-            <WaitlistModal 
-                isOpen={isWaitlistOpen} 
-                onClose={() => setIsWaitlistOpen(false)} 
-                defaultType="VET" 
-            />
         </>
     );
 }

@@ -7,10 +7,9 @@ import Link from "next/link"
 interface DownloadModalProps {
     isOpen: boolean
     onClose: () => void
-    onOpenWaitlist: () => void
 }
 
-export function DownloadModal({ isOpen, onClose, onOpenWaitlist }: DownloadModalProps) {
+export function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
             <DialogContent className="sm:max-w-md bg-[#FAF8F5] border border-slate-200 text-slate-900 rounded-3xl p-8 shadow-2xl">
@@ -58,24 +57,22 @@ export function DownloadModal({ isOpen, onClose, onOpenWaitlist }: DownloadModal
                         </div>
                     </a>
 
-                    {/* App Store Button - Active Waitlist */}
-                    <button
-                        onClick={onOpenWaitlist}
-                        className="group flex items-center gap-4 w-full bg-white text-slate-800 p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition-all hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden shadow-sm"
+                    {/* App Store Button - Próximamente */}
+                    <div
+                        className="group flex items-center gap-4 w-full bg-slate-100/80 text-slate-500 p-4 rounded-xl border border-slate-200/80 relative overflow-hidden shadow-sm cursor-default"
                     >
                         <div className="w-10 h-10 flex items-center justify-center">
-                            <Apple fill="currentColor" size={36} className="pb-1 text-slate-800" />
+                            <Apple fill="currentColor" size={36} className="pb-1 text-slate-400" />
                         </div>
                         <div className="flex flex-col items-start leading-none">
-                            <span className="text-[10px] font-bold uppercase tracking-wider opacity-60">Consíguelo en el</span>
-                            <span className="text-xl font-bold">App Store</span>
+                            <span className="text-[10px] font-bold uppercase tracking-wider opacity-60">Próximamente en el</span>
+                            <span className="text-xl font-bold text-slate-700">App Store</span>
                         </div>
 
-                        {/* 'Coming Soon' Badge */}
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/10 px-3 py-1 rounded-full text-[10px] font-bold text-primary border border-primary/20 group-hover:scale-105 transition-transform">
-                            Lista Espera
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-slate-200/80 px-3 py-1 rounded-full text-[10px] font-bold text-slate-600 border border-slate-300/60">
+                            Próximamente
                         </div>
-                    </button>
+                    </div>
                 </div>
             </DialogContent>
         </Dialog>

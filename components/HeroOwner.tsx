@@ -3,11 +3,9 @@
 import { useState, useRef, useEffect } from "react"
 import { Globe } from "lucide-react"
 import { DownloadModal } from "./modals/DownloadModal"
-import { WaitlistModal } from "./modals/WaitlistModal"
 
 export function HeroOwner() {
     const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false)
-    const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
     const [isVideoLoaded, setIsVideoLoaded] = useState(false)
     const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -104,15 +102,6 @@ export function HeroOwner() {
             <DownloadModal 
                 isOpen={isDownloadModalOpen} 
                 onClose={() => setIsDownloadModalOpen(false)} 
-                onOpenWaitlist={() => {
-                    setIsDownloadModalOpen(false)
-                    setIsWaitlistOpen(true)
-                }}
-            />
-            <WaitlistModal 
-                isOpen={isWaitlistOpen} 
-                onClose={() => setIsWaitlistOpen(false)} 
-                defaultType="OWNER" 
             />
         </>
     )

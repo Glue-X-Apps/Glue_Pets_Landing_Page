@@ -2,10 +2,8 @@
 
 import { useState, useRef, useEffect } from "react"
 import { CheckCircle2, ArrowRight, BarChart3, Activity } from "lucide-react"
-import { WaitlistModal } from "./modals/WaitlistModal"
 
 export function HeroVet() {
-    const [isWaitlistOpen, setIsWaitlistOpen] = useState(false)
     const [isVideoLoaded, setIsVideoLoaded] = useState(false)
     const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -94,12 +92,12 @@ export function HeroVet() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                            <button 
-                                onClick={() => setIsWaitlistOpen(true)}
+                            <a 
+                                href="mailto:contacto@gluepets.cl?subject=Contacto%20Veterinarias%20GluePets"
                                 className="bg-primary text-white px-8 py-3.5 rounded-xl font-bold text-lg hover:shadow-glow hover:-translate-y-0.5 transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group cursor-pointer"
                             >
-                                <span>Solicitar Acceso Beta</span>
-                            </button>
+                                <span>Contactar Equipo</span>
+                            </a>
                             <button
                                 onClick={() => {
                                     const element = document.getElementById('demo');
@@ -128,12 +126,6 @@ export function HeroVet() {
                     </div>
                 </div>
             </section>
-
-            <WaitlistModal 
-                isOpen={isWaitlistOpen} 
-                onClose={() => setIsWaitlistOpen(false)} 
-                defaultType="VET" 
-            />
         </>
     )
 }
